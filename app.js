@@ -1,11 +1,12 @@
 /* =============================================
-   AI JOB DOOMSDAY SIMULATOR 2027 — app.js
+   AI JOB IMPACT ANALYZER — app.js
+   Warm Editorial Redesign
    ============================================= */
 
 'use strict';
 
 // =============================================
-// RESEARCH DATA (from research-data.json)
+// RESEARCH DATA
 // =============================================
 const RESEARCH = {
   jobCategories: {
@@ -90,67 +91,67 @@ const RESEARCH = {
   },
   skillsByIndustry: {
     Technology: {
-      icon: ["🔐","🤖","☁️","🎨","⚙️","📊","🛡️"],
+      icon: ["\uD83D\uDD10","\uD83E\uDD16","\u2601\uFE0F","\uD83C\uDFA8","\u2699\uFE0F","\uD83D\uDCCA","\uD83D\uDEE1\uFE0F"],
       skills: ["Cybersecurity","AI/ML Operations","Cloud Architecture","Human-AI Interaction Design",
         "DevOps & Infrastructure","AI Ethics & Governance","Systems Design"]
     },
     Finance: {
-      icon: ["🧠","📡","🔍","🤝","📈","⚖️","🔒"],
+      icon: ["\uD83E\uDDE0","\uD83D\uDCE1","\uD83D\uDD0D","\uD83E\uDD1D","\uD83D\uDCC8","\u2696\uFE0F","\uD83D\uDD12"],
       skills: ["AI-Augmented Decision Making","Strategic Communication","Risk Analysis",
         "Client Relationship Management","Data Storytelling","Regulatory Compliance","Fraud Detection"]
     },
     Healthcare: {
-      icon: ["💊","🩺","🤝","🔬","📋","🧬","📱"],
+      icon: ["\uD83D\uDC8A","\uD83E\uDE7A","\uD83E\uDD1D","\uD83D\uDD2C","\uD83D\uDCCB","\uD83E\uDDEC","\uD83D\uDCF1"],
       skills: ["Telemedicine Technology","AI-Assisted Diagnostics","Patient Communication",
         "Specialized Procedures","Research Methodology","Clinical Data Analysis","Digital Health"]
     },
     Education: {
-      icon: ["🧠","🎯","🤝","📊","💡","🌍","🎮"],
+      icon: ["\uD83E\uDDE0","\uD83C\uDFAF","\uD83E\uDD1D","\uD83D\uDCCA","\uD83D\uDCA1","\uD83C\uDF0D","\uD83C\uDFAE"],
       skills: ["AI Literacy & Pedagogy","Personalized Learning Design","Emotional Intelligence",
         "Data-Driven Instruction","Creative Problem Solving","Interdisciplinary Teaching","EdTech Mastery"]
     },
     Legal: {
-      icon: ["🧠","🔍","⚖️","🤝","📝","🛡️","💼"],
+      icon: ["\uD83E\uDDE0","\uD83D\uDD0D","\u2696\uFE0F","\uD83E\uDD1D","\uD83D\uDCDD","\uD83D\uDEE1\uFE0F","\uD83D\uDCBC"],
       skills: ["AI Legal Research","Regulatory Technology","Contract Analysis",
         "Ethical Judgment","Strategic Advocacy","Compliance Tech","Domain Expertise"]
     },
     Marketing: {
-      icon: ["🎨","📡","🎯","📊","🤝","💡","🌐"],
+      icon: ["\uD83C\uDFA8","\uD83D\uDCE1","\uD83C\uDFAF","\uD83D\uDCCA","\uD83E\uDD1D","\uD83D\uDCA1","\uD83C\uDF10"],
       skills: ["Brand Strategy & Voice","AI Tool Mastery","Creative Direction",
         "Cultural Insight","Multimedia Production","Data Storytelling","Campaign Analytics"]
     },
     Manufacturing: {
-      icon: ["🤖","🔧","📊","🛡️","⚡","🌱","🏭"],
+      icon: ["\uD83E\uDD16","\uD83D\uDD27","\uD83D\uDCCA","\uD83D\uDEE1\uFE0F","\u26A1","\uD83C\uDF31","\uD83C\uDFED"],
       skills: ["Industrial AI Systems","Advanced Diagnostics","Smart Manufacturing",
         "Quality Control AI","Process Optimization","Renewable Energy Tech","Robotics Oversight"]
     },
     Retail: {
-      icon: ["📊","🤝","🌐","📱","🎯","💡","🔍"],
+      icon: ["\uD83D\uDCCA","\uD83E\uDD1D","\uD83C\uDF10","\uD83D\uDCF1","\uD83C\uDFAF","\uD83D\uDCA1","\uD83D\uDD0D"],
       skills: ["Customer Experience Design","AI-Driven Personalization","Omnichannel Strategy",
         "Supply Chain Optimization","Brand Storytelling","Data Analytics","E-commerce Technology"]
     },
     Government: {
-      icon: ["🛡️","📊","🤝","⚖️","💡","🌐","🔒"],
+      icon: ["\uD83D\uDEE1\uFE0F","\uD83D\uDCCA","\uD83E\uDD1D","\u2696\uFE0F","\uD83D\uDCA1","\uD83C\uDF10","\uD83D\uDD12"],
       skills: ["AI Policy & Governance","Digital Services Design","Stakeholder Communication",
         "Ethical AI Implementation","Cybersecurity","Data Analytics","Change Management"]
     },
     Creative: {
-      icon: ["🎨","💡","📡","🌍","🎬","🤝","🎯"],
+      icon: ["\uD83C\uDFA8","\uD83D\uDCA1","\uD83D\uDCE1","\uD83C\uDF0D","\uD83C\uDFAC","\uD83E\uDD1D","\uD83C\uDFAF"],
       skills: ["Creative Direction & Vision","AI Tool Mastery","Cultural Insight",
         "Multimedia Production","Experiential Design","Brand Strategy","Audience Development"]
     },
     Construction: {
-      icon: ["🏗️","🤖","⚡","📊","🔧","🌱","💼"],
+      icon: ["\uD83C\uDFD7\uFE0F","\uD83E\uDD16","\u26A1","\uD83D\uDCCA","\uD83D\uDD27","\uD83C\uDF31","\uD83D\uDCBC"],
       skills: ["Smart Building Systems","Renewable Energy Tech","Advanced Diagnostics Tools",
         "Project Management","BIM & Digital Twins","Entrepreneurship","Safety Tech"]
     },
     Transportation: {
-      icon: ["🚀","📡","🔧","📊","🛡️","🌱","💡"],
+      icon: ["\uD83D\uDE80","\uD83D\uDCE1","\uD83D\uDD27","\uD83D\uDCCA","\uD83D\uDEE1\uFE0F","\uD83C\uDF31","\uD83D\uDCA1"],
       skills: ["Autonomous Systems Oversight","Logistics Optimization","Predictive Maintenance",
         "Fleet Management Tech","Safety & Compliance","Sustainability Tech","Last-Mile Innovation"]
     },
     Other: {
-      icon: ["🧠","🤝","📊","💡","🔍","🎯","⚡"],
+      icon: ["\uD83E\uDDE0","\uD83E\uDD1D","\uD83D\uDCCA","\uD83D\uDCA1","\uD83D\uDD0D","\uD83C\uDFAF","\u26A1"],
       skills: ["AI Literacy & Prompt Engineering","Critical Thinking & Analysis","Emotional Intelligence",
         "Creative Problem Solving","Adaptability & Resilience","Data Storytelling","Interdisciplinary Knowledge"]
     }
@@ -208,23 +209,23 @@ const RESEARCH = {
   ],
   scenarios: {
     best: {
-      name: "The Augmentation Era",
-      desc: "AI becomes your superpower. You master AI tools early, your productivity triples, and you become indispensable. Companies compete for humans who can direct AI effectively. Salary rises 20–35%.",
+      name: "AI-Augmented Growth",
+      desc: "AI becomes a productivity multiplier for your role. Early adoption of AI tools triples output, and your capacity to direct AI effectively becomes a premium skill. Organizations compete for workers who can lead AI integration. Salary growth of 20\u201335% over 3 years.",
       prob_base: [25, 35]
     },
     likely: {
-      name: "The Great Reshuffle",
-      desc: "Your current role transforms significantly. 40–60% of tasks get automated, but new responsibilities emerge. You spend 6–12 months upskilling. Salary stays flat or dips 5–10% during transition before recovering.",
+      name: "Role Transformation",
+      desc: "Your current role evolves significantly. 40\u201360% of existing tasks become automated, but new responsibilities emerge around oversight, strategy, and human judgment. A 6\u201312 month adaptation period is expected. Compensation stays flat or dips modestly before recovering.",
       prob_base: [35, 45]
     },
     bad: {
-      name: "The Displacement Wave",
-      desc: "Your role gets significantly downsized. Companies cut headcount 20–40% in your department. You compete with AI-augmented workers for fewer positions. Forced career pivot within 18 months.",
+      name: "Significant Disruption",
+      desc: "Your role faces meaningful headcount reduction. Organizations cut positions 20\u201340% in your department, and remaining workers take on broader responsibilities with AI assistance. A career pivot within 18 months becomes the most pragmatic path.",
       prob_base: [15, 25]
     },
     worst: {
-      name: "The Obsolescence Cliff",
-      desc: "AI fully automates your core functions. Your entire department gets eliminated. Retraining takes 2+ years. Salary drops 30–50% during extended transition. Only 1 in 5 displaced workers returns to equivalent role.",
+      name: "Full Displacement",
+      desc: "AI assumes the core functions of your role. Entire departments are restructured or eliminated. Retraining requires 2+ years of focused effort. Only 1 in 5 displaced workers returns to equivalent-level employment within 3 years. Early action is essential.",
       prob_base: [5, 15]
     }
   }
@@ -312,66 +313,11 @@ function showPage(page) {
     window.scrollTo(0, 0);
   }
   if (page === 'leaderboard') renderLeaderboard('all');
-}
-
-// =============================================
-// MATRIX RAIN CANVAS
-// =============================================
-function initMatrix() {
-  const canvas = document.getElementById('matrixBg');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  function resize() {
-    canvas.width = canvas.parentElement.offsetWidth;
-    canvas.height = canvas.parentElement.offsetHeight;
+  // Update leaderboard back-link
+  if (page === 'leaderboard' && analysisResult) {
+    const backBtn = document.getElementById('backFromLeaderboard');
+    if (backBtn) backBtn.setAttribute('onclick', "showPage('results'); return false;");
   }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const chars = "01アイウエオカキクケコABCDEFGHIJKLMNOPQRSTUVWXYZ#@!%$&01";
-  const fontSize = 14;
-  let cols = Math.floor(canvas.width / fontSize);
-  const drops = Array(cols).fill(1);
-
-  function draw() {
-    ctx.fillStyle = 'rgba(10, 10, 10, 0.06)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff41';
-    ctx.font = `${fontSize}px Share Tech Mono, monospace`;
-
-    cols = Math.floor(canvas.width / fontSize);
-    while (drops.length < cols) drops.push(1);
-
-    for (let i = 0; i < drops.length; i++) {
-      const char = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillStyle = Math.random() > 0.95 ? '#00d4ff' :
-                      Math.random() > 0.9 ? '#ffb000' : '#00ff41';
-      ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-  }
-
-  setInterval(draw, 50);
-}
-
-// =============================================
-// TYPING ANIMATION
-// =============================================
-function typeText(el, text, speed = 50) {
-  el.textContent = '';
-  let i = 0;
-  const interval = setInterval(() => {
-    if (i < text.length) {
-      el.textContent += text[i];
-      i++;
-    } else {
-      clearInterval(interval);
-    }
-  }, speed);
 }
 
 // =============================================
@@ -417,9 +363,9 @@ document.addEventListener('click', (e) => {
 function updateSlider(el) {
   const display = document.getElementById('expDisplay');
   display.textContent = el.value >= 30 ? '30+' : el.value;
-  // Update slider fill color
+  // Update slider fill
   const pct = (el.value / 30) * 100;
-  el.style.background = `linear-gradient(90deg, var(--green) ${pct}%, var(--border-bright) ${pct}%)`;
+  el.style.background = `linear-gradient(90deg, #C45D3E ${pct}%, #E4DDD1 ${pct}%)`;
 }
 
 // =============================================
@@ -428,7 +374,6 @@ function updateSlider(el) {
 function matchJobCategory(jobTitle) {
   const lower = jobTitle.toLowerCase().trim();
 
-  // Try exact/partial match in each category
   const categories = ['very_low_risk', 'low_risk', 'moderate_risk', 'high_risk', 'ultra_high_risk'];
   for (const cat of categories) {
     const roles = RESEARCH.jobCategories[cat].roles;
@@ -465,12 +410,11 @@ function matchJobCategory(jobTitle) {
     }
   }
 
-  // Default fallback
   return 'moderate_risk';
 }
 
 // =============================================
-// CALCULATE SURVIVAL SCORE
+// CALCULATE RESILIENCE SCORE
 // =============================================
 function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
   const cat = matchJobCategory(jobTitle);
@@ -478,7 +422,7 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
   const [minScore, maxScore] = catData.survival_range;
   const [minSalary, maxSalary] = catData.salary_change_range;
 
-  // Base score — midpoint of range with slight variance
+  // Base score \u2014 midpoint of range
   const baseScore = (minScore + maxScore) / 2;
 
   // Experience modifier
@@ -498,51 +442,62 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
   const senMods = { entry: -8, mid: 0, senior: 5, executive: 8 };
   const senMod = senMods[seniority] || 0;
 
-  // Random variance ±3%
+  // Slight variance \u00B13
   const variance = (Math.random() * 6) - 3;
 
   const rawScore = baseScore + expMod + aiMod + senMod + variance;
   const score = Math.max(3, Math.min(97, Math.round(rawScore)));
 
   // Salary projection
-  const baseSalaryMid = (minSalary + maxSalary) / 2;
   const salaryBest = Math.min(40, maxSalary + (aiMod > 0 ? 8 : 0) + (expMod > 0 ? 5 : 0));
   const salaryWorst = Math.max(-55, minSalary - (aiMod < 0 ? 5 : 0));
 
-  // Threat level label
+  // Threat level (professional language)
   let threatLevel, threatColor;
-  if (score < 20) { threatLevel = 'EXTINCTION LEVEL'; threatColor = '#ff0040'; }
-  else if (score < 35) { threatLevel = 'CRITICAL THREAT'; threatColor = '#ff0040'; }
-  else if (score < 50) { threatLevel = 'HIGH THREAT'; threatColor = '#ff6633'; }
-  else if (score < 65) { threatLevel = 'MODERATE RISK'; threatColor = '#ffb000'; }
-  else if (score < 80) { threatLevel = 'LOW RISK'; threatColor = '#00ff41'; }
-  else { threatLevel = 'HIGHLY RESILIENT'; threatColor = '#00d4ff'; }
+  if (score < 20) { threatLevel = 'High Disruption Risk'; threatColor = '#C45D3E'; }
+  else if (score < 35) { threatLevel = 'Significant Risk'; threatColor = '#C45D3E'; }
+  else if (score < 50) { threatLevel = 'Elevated Risk'; threatColor = '#C49A3C'; }
+  else if (score < 65) { threatLevel = 'Moderate Risk'; threatColor = '#C49A3C'; }
+  else if (score < 80) { threatLevel = 'Low Risk'; threatColor = '#5A7A5E'; }
+  else { threatLevel = 'Highly Resilient'; threatColor = '#2C3E50'; }
 
-  // Determine primary wave impact
+  // Disruption wave
   let waveImpact;
-  if (cat === 'ultra_high_risk') waveImpact = 'Wave 1 (2023–2025): ALREADY IN PROGRESS';
-  else if (cat === 'high_risk') waveImpact = 'Wave 2 (2025–2027): PEAK DISRUPTION NOW';
-  else if (cat === 'moderate_risk') waveImpact = 'Wave 2–3 (2026–2028): TRANSITION PERIOD';
-  else if (cat === 'low_risk') waveImpact = 'Wave 3 (2027–2030): LONG-TERM ADAPTATION';
-  else waveImpact = 'Post-2030: STRONG RESILIENCE THROUGH AI ERA';
+  if (cat === 'ultra_high_risk') waveImpact = 'Wave 1 (2023\u20132025) \u2014 Disruption already in progress';
+  else if (cat === 'high_risk') waveImpact = 'Wave 2 (2025\u20132027) \u2014 Peak disruption period';
+  else if (cat === 'moderate_risk') waveImpact = 'Wave 2\u20133 (2026\u20132028) \u2014 Transition and adaptation period';
+  else if (cat === 'low_risk') waveImpact = 'Wave 3 (2027\u20132030) \u2014 Long-term evolution';
+  else waveImpact = 'Post-2030 \u2014 Strong resilience through the AI era';
 
-  // Verdict text
+  // Verdict (professional tone)
   let verdict;
   if (score < 25) {
-    verdict = `Your role faces EXTINCTION-LEVEL threat. AI will automate ${100 - score}% of your core functions by 2027. Immediate reskilling is critical.`;
+    verdict = `This role faces high disruption risk. AI is already automating a significant portion of its core functions, and the pace is accelerating through 2027. Proactive reskilling is the most effective response at this stage.`;
   } else if (score < 40) {
-    verdict = `CRITICAL exposure detected. Your role is in Wave ${cat === 'ultra_high_risk' ? '1' : '2'} of AI disruption. Proactive adaptation is non-negotiable.`;
+    verdict = `This role carries significant exposure to AI disruption. It falls within Wave ${cat === 'ultra_high_risk' ? '1' : '2'} of automation impact. Workers who adapt early \u2014 by building adjacent skills and AI fluency \u2014 will be best positioned.`;
   } else if (score < 55) {
-    verdict = `HIGH disruption risk. Your role will transform significantly by 2027. AI will automate many tasks, but human oversight remains essential.`;
+    verdict = `This role faces meaningful transformation over the next 2\u20133 years. AI will automate a substantial portion of current tasks, but human oversight, judgment, and client relationships will remain essential.`;
   } else if (score < 70) {
-    verdict = `MODERATE threat level. Your role faces AI augmentation more than replacement. Workers who master AI tools will gain a significant edge.`;
+    verdict = `This role shows moderate resilience. AI augmentation is more likely than direct replacement. Workers who actively adopt AI tools will gain a measurable productivity and compensation advantage over peers who do not.`;
   } else if (score < 85) {
-    verdict = `LOW risk profile. Your role's complexity and human requirements provide strong protection. AI will augment rather than replace your skills.`;
+    verdict = `This role has a strong resilience profile. Its complexity, physical demands, or requirement for human judgment provides meaningful protection against automation in the near to medium term.`;
   } else {
-    verdict = `HIGHLY RESILIENT. Your role has strong natural defenses against AI automation. Physical complexity and human judgment make you irreplaceable.`;
+    verdict = `This role is highly resilient to AI automation. Physical complexity, unpredictable environments, and the irreplaceable nature of human judgment make near-term displacement unlikely. AI will serve as a supporting tool rather than a replacement.`;
   }
 
-  // Scenario probabilities (adjusted)
+  // Risk explanation for the spectrum bar
+  let riskExplanation;
+  if (score < 35) {
+    riskExplanation = `Your role is positioned in the high-disruption zone. Research from the WEF and Goldman Sachs identifies roles in this range as facing the most immediate pressure from AI automation, particularly in task-level functions. Early action on skill development has a demonstrable impact on long-term outcomes.`;
+  } else if (score < 55) {
+    riskExplanation = `Your role sits in the elevated-risk zone \u2014 significant transformation is expected, but outright displacement is not inevitable. Workers who augment their expertise with AI proficiency are demonstrably more likely to navigate this transition successfully.`;
+  } else if (score < 75) {
+    riskExplanation = `Your role shows moderate resilience. AI will reshape responsibilities, but the combination of human judgment, domain expertise, and relationship-based work provides a meaningful buffer. Adaptation will be required; replacement is not the primary risk.`;
+  } else {
+    riskExplanation = `Your role sits in the highly resilient zone of the spectrum. Physical presence, fine-grained human judgment, and complexity in unpredictable environments make full automation technically and practically difficult within the foreseeable research horizon.`;
+  }
+
+  // Scenario probabilities
   let bestProb, likelyProb, badProb, worstProb;
   if (score >= 70) {
     bestProb = 40; likelyProb = 40; badProb = 14; worstProb = 6;
@@ -554,11 +509,11 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
     bestProb = 10; likelyProb = 30; badProb = 36; worstProb = 24;
   }
 
-  // Adjust for AI usage
+  // AI usage adjustments
   if (aiUsage === 'daily') { bestProb += 8; likelyProb -= 2; badProb -= 4; worstProb -= 2; }
   else if (aiUsage === 'never') { bestProb -= 8; likelyProb -= 4; badProb += 6; worstProb += 6; }
 
-  // Normalize to ~100
+  // Normalize to 100
   const total = bestProb + likelyProb + badProb + worstProb;
   bestProb = Math.round(bestProb / total * 100);
   likelyProb = Math.round(likelyProb / total * 100);
@@ -571,6 +526,7 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
     threatLevel,
     threatColor,
     verdict,
+    riskExplanation,
     waveImpact,
     salaryBest: Math.round(salaryBest),
     salaryWorst: Math.round(salaryWorst),
@@ -580,46 +536,46 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
 }
 
 // =============================================
-// LOADING SEQUENCE
+// LOADING SEQUENCE (simplified)
 // =============================================
+const LOADING_MESSAGES = [
+  'Identifying role category\u2026',
+  'Cross-referencing disruption research\u2026',
+  'Applying experience and seniority modifiers\u2026',
+  'Generating scenario probabilities\u2026'
+];
+
 function runLoadingSequence(callback) {
   showPage('loading');
 
-  const messages = ['msg0','msg1','msg2','msg3','msg4','msg5','msg6','msg7'];
-  const bar = document.getElementById('loadingBar');
-  const pct = document.getElementById('loadingPercent');
-  let currentMsg = 0;
-  let progress = 0;
+  let msgIndex = 0;
+  const statusEl = document.getElementById('loadingStatus');
+  const msgs = document.querySelectorAll('.load-msg');
 
-  const interval = setInterval(() => {
-    progress += Math.random() * 4 + 1;
-    if (progress > 100) progress = 100;
-    bar.style.width = progress + '%';
-    pct.textContent = Math.round(progress) + '%';
+  // Reset
+  msgs.forEach(m => m.classList.remove('active', 'done'));
 
-    const msgIndex = Math.floor(progress / (100 / messages.length));
-    if (msgIndex !== currentMsg && msgIndex < messages.length) {
-      // Mark previous as done
-      if (currentMsg < messages.length) {
-        const prev = document.getElementById(messages[currentMsg]);
-        if (prev) {
-          prev.classList.remove('active');
-          prev.classList.add('done');
-        }
+  function advanceMessage() {
+    if (msgIndex > 0 && msgs[msgIndex - 1]) {
+      msgs[msgIndex - 1].classList.remove('active');
+      msgs[msgIndex - 1].classList.add('done');
+    }
+    if (msgIndex < msgs.length) {
+      if (msgs[msgIndex]) msgs[msgIndex].classList.add('active');
+      if (statusEl) statusEl.textContent = LOADING_MESSAGES[msgIndex] || 'Analyzing\u2026';
+      msgIndex++;
+      if (msgIndex <= msgs.length) {
+        setTimeout(advanceMessage, 750);
       }
-      currentMsg = msgIndex;
-      const cur = document.getElementById(messages[currentMsg]);
-      if (cur) cur.classList.add('active');
+    } else {
+      // All done \u2014 mark last done
+      msgs.forEach(m => { m.classList.remove('active'); m.classList.add('done'); });
+      if (statusEl) statusEl.textContent = 'Assessment complete.';
+      setTimeout(callback, 500);
     }
+  }
 
-    if (progress >= 100) {
-      clearInterval(interval);
-      // Activate last message
-      const last = document.getElementById('msg7');
-      if (last) last.classList.add('active');
-      setTimeout(callback, 800);
-    }
-  }, 80);
+  setTimeout(advanceMessage, 200);
 }
 
 // =============================================
@@ -633,18 +589,9 @@ function runAnalysis() {
   const aiUsage = document.querySelector('input[name="aiUsage"]:checked')?.value || 'occasionally';
 
   if (!jobTitle) {
-    alert('Please enter your job title to proceed.');
+    alert('Please enter your job title to continue.');
     return;
   }
-
-  // Reset loading bar
-  const bar = document.getElementById('loadingBar');
-  const pct = document.getElementById('loadingPercent');
-  bar.style.width = '0%';
-  pct.textContent = '0%';
-  document.querySelectorAll('.load-msg').forEach(m => {
-    m.classList.remove('active', 'done');
-  });
 
   // Calculate result
   analysisResult = calculateSurvival(jobTitle, experience, industry, seniority, aiUsage);
@@ -671,59 +618,58 @@ function runAnalysis() {
 function buildResults(r) {
   // Header
   document.getElementById('resultsSubject').textContent =
-    `THREAT ANALYSIS: ${r.jobTitle.toUpperCase()} — ${r.industry || 'UNSPECIFIED SECTOR'}`;
+    `AI Impact Assessment: ${r.jobTitle} \u2014 ${r.industry || 'General'}`;
   document.getElementById('resultsTimestamp').textContent =
-    `GENERATED: ${new Date().toLocaleString('en-US', {
-      month: 'short', day: 'numeric', year: 'numeric',
-      hour: '2-digit', minute: '2-digit'
-    })} EST`;
+    new Date().toLocaleDateString('en-US', {
+      month: 'long', day: 'numeric', year: 'numeric'
+    });
 
-  // Section A: Gauge & Verdict
+  // Score gauge color
+  const gaugeColor = r.score < 35 ? '#C45D3E' :
+                     r.score < 55 ? '#C49A3C' :
+                     r.score < 75 ? '#5A7A5E' : '#2C3E50';
+
   const gaugeFill = document.getElementById('gaugeFill');
   const gaugeNumber = document.getElementById('gaugeNumber');
-  const threatBadge = document.getElementById('threatBadge');
-  const threatFill = document.getElementById('threatFill');
-  const survivalVerdict = document.getElementById('survivalVerdict');
-
-  // Set gauge color
-  const gaugeColor = r.score < 35 ? '#ff0040' :
-                     r.score < 55 ? '#ff6633' :
-                     r.score < 70 ? '#ffb000' : '#00ff41';
   gaugeFill.setAttribute('stroke', gaugeColor);
   gaugeNumber.style.fill = gaugeColor;
 
-  // Threat badge styling
+  // Threat badge
+  const threatBadge = document.getElementById('threatBadge');
   threatBadge.textContent = r.threatLevel;
   threatBadge.style.borderColor = r.threatColor;
   threatBadge.style.color = r.threatColor;
 
-  // Threat meter: invert (high score = low threat meter fill)
-  const threatPct = (100 - r.score);
-  threatFill.style.width = '0%';
+  // Verdict
+  document.getElementById('survivalVerdict').textContent = r.verdict;
 
-  survivalVerdict.textContent = r.verdict;
+  // Risk explanation
+  const riskExp = document.getElementById('riskExplanation');
+  if (riskExp) riskExp.textContent = r.riskExplanation;
 
-  // Section C: Salary data
+  // Position risk marker (score 0-100 \u2192 left 0-100%)
+  const riskMarker = document.getElementById('riskMarker');
+  if (riskMarker) {
+    // Invert: score 100 = most resilient (right), score 0 = most at risk (left)
+    const leftPct = (r.score / 100) * 100;
+    riskMarker.style.left = leftPct + '%';
+    const markerLabel = document.getElementById('riskMarkerLabel');
+    if (markerLabel) markerLabel.textContent = r.jobTitle;
+  }
+
+  // Salary
   document.getElementById('bestSalaryPct').textContent =
     (r.salaryBest > 0 ? '+' : '') + r.salaryBest + '%';
   document.getElementById('worstSalaryPct').textContent =
     (r.salaryWorst > 0 ? '+' : '') + r.salaryWorst + '%';
 
-  // Section D: Futures
+  // Build sub-sections
   buildFutures(r);
-
-  // Section E: Skills
   buildSkills(r);
-
-  // Section F: Quotes
   buildQuotes();
-
-  // Section G: Big picture (static, pre-built in HTML)
-
-  // Share card
   buildShareCard(r);
 
-  // Store data for salary chart
+  // Store for chart
   window._salaryData = { best: r.salaryBest, worst: r.salaryWorst, score: r.score };
 }
 
@@ -732,22 +678,21 @@ function buildFutures(r) {
   const { bestProb, likelyProb, badProb, worstProb } = r.scenarios;
   const sc = RESEARCH.scenarios;
 
-  // Determine most likely index
   const probs = [bestProb, likelyProb, badProb, worstProb];
   const maxProb = Math.max(...probs);
 
   const futures = [
-    { key: 'best', prob: bestProb, cls: 'future-best', nameColor: '#00ff41' },
-    { key: 'likely', prob: likelyProb, cls: '', nameColor: '#ffb000' },
-    { key: 'bad', prob: badProb, cls: '', nameColor: '#ff8855' },
-    { key: 'worst', prob: worstProb, cls: 'future-worst', nameColor: '#ff0040' }
+    { key: 'best',   prob: bestProb,   nameColor: '#5A7A5E' },
+    { key: 'likely', prob: likelyProb, nameColor: '#2C3E50' },
+    { key: 'bad',    prob: badProb,    nameColor: '#C49A3C' },
+    { key: 'worst',  prob: worstProb,  nameColor: '#C45D3E' }
   ];
 
   grid.innerHTML = futures.map(f => {
     const scenario = sc[f.key];
     const isTop = f.prob === maxProb;
     return `
-      <div class="future-card ${f.cls} ${isTop ? 'most-likely' : ''}">
+      <div class="future-card ${isTop ? 'most-likely' : ''}">
         <div class="future-name" style="color:${f.nameColor}">${scenario.name}</div>
         <div class="future-prob" style="color:${f.nameColor}">${f.prob}%</div>
         <div class="future-desc">${scenario.desc}</div>
@@ -761,59 +706,95 @@ function buildSkills(r) {
   const industry = r.industry || 'Other';
   const industryData = RESEARCH.skillsByIndustry[industry] || RESEARCH.skillsByIndustry.Other;
 
-  const priorities = ['CRITICAL','CRITICAL','HIGH','HIGH','RECOMMENDED','RECOMMENDED','RECOMMENDED','RECOMMENDED'];
+  const priorities = ['CRITICAL','CRITICAL','HIGH','HIGH','RECOMMENDED','RECOMMENDED','RECOMMENDED'];
   const priorityClass = { CRITICAL: 'priority-critical', HIGH: 'priority-high', RECOMMENDED: 'priority-recommended' };
 
   const skillDescriptions = {
     "AI Literacy & Prompt Engineering": "Master prompting, AI workflows, and tool chains. 56% wage premium for AI-skilled workers (PwC).",
-    "Critical Thinking & Analysis": "AI can generate — humans must evaluate. Complex judgment remains a human advantage.",
-    "Emotional Intelligence": "Empathy, social skills, and relationship-building — skills AI cannot replicate.",
+    "Critical Thinking & Analysis": "AI can generate \u2014 humans must evaluate. Complex judgment remains a human advantage.",
+    "Emotional Intelligence": "Empathy, social skills, and relationship-building \u2014 skills AI cannot replicate.",
     "Creative Problem Solving": "Novel thinking and creative synthesis across domains remain uniquely human.",
-    "Adaptability & Resilience": "The #1 skill for navigating rapid change in the AI era.",
+    "Adaptability & Resilience": "The number one skill for navigating rapid change in the AI era.",
     "Data Storytelling": "Transform AI-generated data into compelling narratives and actionable insights.",
     "Cybersecurity": "As AI expands attack surfaces, security expertise becomes mission-critical.",
     "AI/ML Operations": "Manage, deploy, and maintain AI systems in production environments.",
-    "Cloud Architecture": "AI runs in the cloud — cloud expertise is foundational for the AI economy.",
+    "Cloud Architecture": "AI runs in the cloud \u2014 cloud expertise is foundational for the AI economy.",
     "Human-AI Interaction Design": "Design systems where humans and AI collaborate effectively.",
     "AI Ethics & Governance": "Organizations need humans to set guardrails and ensure responsible AI use.",
     "Systems Design": "High-level architecture and systems thinking remain beyond AI's current scope.",
-    "DevOps & Infrastructure": "The backbone of AI deployment — high demand, hard to automate.",
+    "DevOps & Infrastructure": "The backbone of AI deployment \u2014 high demand, difficult to automate.",
     "AI-Augmented Decision Making": "Use AI as a co-pilot for strategic decisions while retaining final authority.",
     "Strategic Communication": "Translate complex AI insights into human language for stakeholders.",
     "Change Management": "Lead organizations through AI-driven transformation effectively.",
     "Process Optimization": "Identify which processes to automate and how to redesign workflows.",
-    "Domain Expertise Deepening": "Deep subject matter expertise + AI tools = irreplaceable combination.",
     "Client Relationship Management": "Human trust and relationships remain essential in high-stakes contexts.",
     "Brand Strategy & Voice": "Define the authentic human story that AI cannot generate.",
     "Creative Direction": "AI needs human creative vision to produce meaningful work.",
-    "AI Tool Mastery": "Leverage AI tools to multiply your creative output 10x.",
+    "AI Tool Mastery": "Leverage AI tools to multiply your creative output significantly.",
     "Cultural Insight": "Deep cultural understanding informs content that resonates authentically.",
     "Multimedia Production": "Direct, orchestrate, and curate across AI-generated media channels.",
     "Experiential Design": "Create physical and digital experiences that AI cannot fully replicate.",
-    "Telemedicine Technology": "Digital health platforms expanding access to care — high demand.",
+    "Telemedicine Technology": "Digital health platforms expanding access to care \u2014 high demand.",
     "AI-Assisted Diagnostics": "Partner with AI diagnostic tools while applying clinical judgment.",
     "Patient Communication": "Empathy, trust, and communication in healthcare remain deeply human.",
-    "Specialized Procedures": "Hands-on clinical skills cannot be automated — high value.",
-    "Research Methodology": "Design and validate studies that AI cannot do independently.",
-    "Smart Building Systems": "IoT, sensors, and automation in modern construction — growing field.",
-    "Renewable Energy Tech": "Green transition creates massive demand for skilled trades workers.",
+    "Specialized Procedures": "Hands-on clinical skills cannot be automated \u2014 high value.",
+    "Research Methodology": "Design and validate studies that AI cannot conduct independently.",
+    "Smart Building Systems": "IoT, sensors, and automation in modern construction \u2014 growing field.",
+    "Renewable Energy Tech": "Green transition creates significant demand for skilled workers.",
     "Advanced Diagnostics Tools": "AI diagnostic systems require human interpretation and application.",
     "Project Management": "Complex project coordination requires human leadership and judgment.",
-    "Entrepreneurship": "Build your own AI-powered business — the ultimate resilience strategy.",
-    "Interdisciplinary Knowledge": "Broad knowledge enables you to connect dots AI cannot see.",
-    "Logistics Optimization": "AI-augmented supply chain management — humans direct the strategy.",
-    "Regulatory Compliance": "Regulations require human accountability — cannot be delegated to AI.",
+    "Entrepreneurship": "Build your own AI-powered venture \u2014 the ultimate resilience strategy.",
+    "Interdisciplinary Knowledge": "Broad knowledge enables you to connect insights AI cannot see.",
+    "Logistics Optimization": "AI-augmented supply chain management \u2014 humans direct the strategy.",
+    "Regulatory Compliance": "Regulations require human accountability \u2014 cannot be delegated to AI.",
     "Risk Analysis": "Holistic risk assessment combining data and judgment remains human.",
     "Autonomous Systems Oversight": "Monitor and manage AI-driven transportation systems.",
+    "Interdisciplinary Teaching": "Teaching across domains, adapting to diverse learner needs.",
+    "EdTech Mastery": "Proficiency with digital education platforms and AI tutoring tools.",
+    "AI Legal Research": "Leverage AI-powered legal research tools while applying legal judgment.",
+    "Regulatory Technology": "Navigate the intersection of regulation and emerging technology.",
+    "Contract Analysis": "Assess contractual risk and implications in complex agreements.",
+    "Ethical Judgment": "Ethical reasoning and accountability that clients and institutions require.",
+    "Strategic Advocacy": "Represent clients with strategic insight that goes beyond information retrieval.",
+    "Compliance Tech": "Technology-assisted compliance monitoring and reporting.",
+    "Domain Expertise": "Deep subject matter expertise paired with AI tools creates outsized value.",
+    "Industrial AI Systems": "Integrate AI into manufacturing and industrial workflows.",
+    "Smart Manufacturing": "Operate and oversee AI-driven production systems.",
+    "Quality Control AI": "Leverage machine vision and AI for quality assurance at scale.",
+    "Robotics Oversight": "Supervise and troubleshoot robotic systems in industrial environments.",
+    "AI Policy & Governance": "Develop and implement AI governance frameworks for public institutions.",
+    "Digital Services Design": "Design citizen-facing digital services that are accessible and effective.",
+    "Ethical AI Implementation": "Ensure AI systems meet standards for fairness, transparency, and accountability.",
+    "Customer Experience Design": "Architect customer journeys that AI can personalize at scale.",
+    "AI-Driven Personalization": "Use AI to deliver highly relevant customer experiences.",
+    "Omnichannel Strategy": "Integrate physical and digital customer touchpoints cohesively.",
+    "Supply Chain Optimization": "Use AI tools to improve supply chain visibility and efficiency.",
+    "Audience Development": "Build and engage audiences across evolving digital platforms.",
+    "BIM & Digital Twins": "Build information modelling and digital twin technologies for construction.",
+    "Safety Tech": "Leverage technology to enhance workplace safety and compliance.",
+    "Fleet Management Tech": "Manage vehicle fleets using AI-powered routing and diagnostics.",
+    "Sustainability Tech": "Apply technology to reduce environmental impact in transportation.",
+    "Last-Mile Innovation": "Innovate delivery and logistics for the final mile of supply chains.",
+    "Predictive Maintenance": "Use sensor data and AI to anticipate equipment failures.",
+    "Safety & Compliance": "Ensure regulatory and operational safety standards are met.",
+    "Campaign Analytics": "Measure and optimize marketing campaigns with data-driven insights.",
+    "Clinical Data Analysis": "Analyze patient and clinical data to support evidence-based decisions.",
+    "Digital Health": "Navigate and leverage digital health platforms and health informatics.",
+    "Fraud Detection": "Use AI tools to identify and prevent financial fraud.",
+    "Data-Driven Instruction": "Use data and analytics to improve learning outcomes.",
+    "Personalized Learning Design": "Design adaptive, individualized learning experiences.",
+    "AI Literacy & Pedagogy": "Teach AI literacy and model responsible AI use in educational contexts.",
+    "Creative Direction & Vision": "Provide creative leadership that AI tools can execute around.",
+    "Stakeholder Communication": "Communicate complex information to diverse stakeholders clearly.",
   };
 
   const skills = industryData.skills;
   const icons = industryData.icon;
 
-  grid.innerHTML = skills.slice(0, 8).map((skill, i) => {
+  grid.innerHTML = skills.slice(0, 7).map((skill, i) => {
     const priority = priorities[i] || 'RECOMMENDED';
-    const icon = icons[i] || '💡';
-    const desc = skillDescriptions[skill] || `Essential skill for navigating the AI era in ${industry}. High demand projected through 2030.`;
+    const icon = icons[i] || '\uD83D\uDCA1';
+    const desc = skillDescriptions[skill] || `High-value skill for navigating the AI transition in ${industry}. Projected demand through 2030.`;
     return `
       <div class="skill-card">
         <span class="skill-priority ${priorityClass[priority]}">${priority}</span>
@@ -827,15 +808,14 @@ function buildSkills(r) {
 
 function buildQuotes() {
   const grid = document.getElementById('quotesGrid');
-  // Pick 3 random quotes
   const shuffled = [...RESEARCH.expertQuotes].sort(() => Math.random() - 0.5).slice(0, 3);
 
   grid.innerHTML = shuffled.map(q => `
     <div class="quote-card">
-      <div class="quote-text">"${q.quote}"</div>
+      <div class="quote-text">${q.quote}</div>
       <div class="quote-attr">
         <span class="person">${q.person}</span>
-        <span class="title-text"> — ${q.title}</span>
+        <span class="title-text"> \u2014 ${q.title}</span>
         <br>
         <span class="source-text">Source: <a href="${q.url}" target="_blank" rel="noopener noreferrer">${q.source}</a></span>
       </div>
@@ -844,33 +824,31 @@ function buildQuotes() {
 }
 
 function buildShareCard(r) {
-  const seniorityLabel = { entry: 'Entry Level', mid: 'Mid Level', senior: 'Senior', executive: 'Executive' };
-  const aiLabel = { never: 'Never', occasionally: 'Occasionally', regularly: 'Regularly', daily: 'Daily Power User' };
-
   const scenarioProbs = r.scenarios;
   const maxProb = Math.max(scenarioProbs.bestProb, scenarioProbs.likelyProb, scenarioProbs.badProb, scenarioProbs.worstProb);
   let likelyScenario;
-  if (maxProb === scenarioProbs.bestProb) likelyScenario = 'The Augmentation Era';
-  else if (maxProb === scenarioProbs.likelyProb) likelyScenario = 'The Great Reshuffle';
-  else if (maxProb === scenarioProbs.badProb) likelyScenario = 'The Displacement Wave';
-  else likelyScenario = 'The Obsolescence Cliff';
+  if (maxProb === scenarioProbs.bestProb) likelyScenario = RESEARCH.scenarios.best.name;
+  else if (maxProb === scenarioProbs.likelyProb) likelyScenario = RESEARCH.scenarios.likely.name;
+  else if (maxProb === scenarioProbs.badProb) likelyScenario = RESEARCH.scenarios.bad.name;
+  else likelyScenario = RESEARCH.scenarios.worst.name;
 
   const industry = r.industry || 'General';
   const topSkills = (RESEARCH.skillsByIndustry[industry] || RESEARCH.skillsByIndustry.Other).skills.slice(0, 3).join(', ');
 
-  const shareText = `🤖 My AI Doomsday Score: ${r.score}% survival as a ${r.jobTitle}
-📊 Threat Level: ${r.threatLevel}
-🎯 Most Likely Scenario: ${likelyScenario} (${maxProb}%)
-🛠️ Top Skills to Learn: ${topSkills}
+  const shareText =
+`AI Resilience Score: ${r.score}% \u2014 ${r.jobTitle} (${industry})
+Risk Assessment: ${r.threatLevel}
+Most Likely Outcome: ${likelyScenario} (${maxProb}%)
+Recommended Skills: ${topSkills}
 
-Simulated using the AI Job Doomsday Simulator 2027 — based on data from WEF, Goldman Sachs, OpenAI & more.`;
+Assessed using the AI Job Impact Analyzer \u2014 evidence-based career analysis from WEF, Goldman Sachs, McKinsey & OpenAI research.`;
 
   document.getElementById('shareContent').textContent = shareText;
   window._shareText = shareText;
 }
 
 // =============================================
-// SALARY CHART (Canvas-based)
+// SALARY CHART (Canvas \u2014 editorial color scheme)
 // =============================================
 function drawSalaryChart(best, worst) {
   const canvas = document.getElementById('salaryChart');
@@ -882,13 +860,11 @@ function drawSalaryChart(best, worst) {
   canvas.height = H;
 
   const years = [2024, 2025, 2026, 2027, 2028];
-  const padL = 60, padR = 30, padT = 30, padB = 50;
+  const padL = 64, padR = 32, padT = 40, padB = 52;
   const chartW = W - padL - padR;
   const chartH = H - padT - padB;
 
-  // Best case trajectory: gradual increase reaching `best`
-  const bestData = [0, best * 0.2, best * 0.5, best * 0.8, best];
-  // Worst case: gradual decrease reaching `worst`
+  const bestData  = [0, best * 0.2, best * 0.5, best * 0.8, best];
   const worstData = [0, worst * 0.3, worst * 0.65, worst * 0.85, worst];
 
   const allVals = [...bestData, ...worstData, 0];
@@ -900,11 +876,11 @@ function drawSalaryChart(best, worst) {
   function yPos(v) { return padT + chartH - ((v - minVal) / valRange) * chartH; }
 
   // Background
-  ctx.fillStyle = '#0d0d0d';
+  ctx.fillStyle = '#EDE8DE';
   ctx.fillRect(0, 0, W, H);
 
   // Grid lines
-  ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+  ctx.strokeStyle = 'rgba(26,26,26,0.07)';
   ctx.lineWidth = 1;
   for (let i = 0; i <= 4; i++) {
     const y = padT + (i / 4) * chartH;
@@ -916,7 +892,7 @@ function drawSalaryChart(best, worst) {
 
   // Zero line
   const zeroY = yPos(0);
-  ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+  ctx.strokeStyle = 'rgba(26,26,26,0.2)';
   ctx.lineWidth = 1;
   ctx.setLineDash([4, 4]);
   ctx.beginPath();
@@ -931,55 +907,50 @@ function drawSalaryChart(best, worst) {
   for (let i = 1; i < years.length; i++) ctx.lineTo(xPos(i), yPos(bestData[i]));
   for (let i = years.length - 1; i >= 0; i--) ctx.lineTo(xPos(i), yPos(worstData[i]));
   ctx.closePath();
-  ctx.fillStyle = 'rgba(255,176,0,0.06)';
+  ctx.fillStyle = 'rgba(90,122,94,0.08)';
   ctx.fill();
 
-  // Best case line (green)
+  // Best case line (sage green)
   ctx.beginPath();
-  ctx.strokeStyle = '#00ff41';
+  ctx.strokeStyle = '#5A7A5E';
   ctx.lineWidth = 2.5;
-  ctx.shadowBlur = 8;
-  ctx.shadowColor = '#00ff41';
   for (let i = 0; i < years.length; i++) {
     if (i === 0) ctx.moveTo(xPos(i), yPos(bestData[i]));
     else ctx.lineTo(xPos(i), yPos(bestData[i]));
   }
   ctx.stroke();
-  ctx.shadowBlur = 0;
 
-  // Worst case line (red)
+  // Worst case line (terracotta)
   ctx.beginPath();
-  ctx.strokeStyle = '#ff0040';
+  ctx.strokeStyle = '#C45D3E';
   ctx.lineWidth = 2.5;
-  ctx.shadowBlur = 8;
-  ctx.shadowColor = '#ff0040';
   for (let i = 0; i < years.length; i++) {
     if (i === 0) ctx.moveTo(xPos(i), yPos(worstData[i]));
     else ctx.lineTo(xPos(i), yPos(worstData[i]));
   }
   ctx.stroke();
-  ctx.shadowBlur = 0;
 
-  // Data points
+  // Data points \u2014 best
   for (let i = 0; i < years.length; i++) {
-    // Best
     ctx.beginPath();
-    ctx.fillStyle = '#00ff41';
+    ctx.fillStyle = '#5A7A5E';
     ctx.arc(xPos(i), yPos(bestData[i]), 4, 0, Math.PI * 2);
     ctx.fill();
-    // Worst
+  }
+  // Data points \u2014 worst
+  for (let i = 0; i < years.length; i++) {
     ctx.beginPath();
-    ctx.fillStyle = '#ff0040';
+    ctx.fillStyle = '#C45D3E';
     ctx.arc(xPos(i), yPos(worstData[i]), 4, 0, Math.PI * 2);
     ctx.fill();
   }
 
   // Year labels
-  ctx.fillStyle = '#666';
-  ctx.font = '11px Share Tech Mono, monospace';
+  ctx.fillStyle = '#6B6B6B';
+  ctx.font = "500 12px 'Source Sans 3', 'Helvetica Neue', sans-serif";
   ctx.textAlign = 'center';
   years.forEach((yr, i) => {
-    ctx.fillText(yr, xPos(i), H - 12);
+    ctx.fillText(yr, xPos(i), H - 14);
   });
 
   // Y-axis labels
@@ -988,22 +959,23 @@ function drawSalaryChart(best, worst) {
   for (let i = 0; i <= ySteps; i++) {
     const val = minVal + (i / ySteps) * valRange;
     const y = padT + chartH - (i / ySteps) * chartH;
-    ctx.fillStyle = val === 0 ? '#888' : val > 0 ? '#00ff4177' : '#ff004077';
-    ctx.fillText((val > 0 ? '+' : '') + Math.round(val) + '%', padL - 6, y + 4);
+    ctx.fillStyle = val > 0 ? '#5A7A5E' : val < 0 ? '#C45D3E' : '#6B6B6B';
+    ctx.fillText((val > 0 ? '+' : '') + Math.round(val) + '%', padL - 8, y + 4);
   }
 
   // Legend
-  ctx.fillStyle = '#00ff41';
-  ctx.fillRect(padL, 8, 20, 3);
-  ctx.fillStyle = '#aaa';
+  const legendY = padT - 20;
+  ctx.fillStyle = '#5A7A5E';
+  ctx.fillRect(padL, legendY, 22, 3);
+  ctx.fillStyle = '#3D3D3D';
   ctx.textAlign = 'left';
-  ctx.font = '10px Share Tech Mono, monospace';
-  ctx.fillText('Best case (AI Augmentation)', padL + 28, 14);
+  ctx.font = "500 11px 'Source Sans 3', 'Helvetica Neue', sans-serif";
+  ctx.fillText('Best case (AI augmentation)', padL + 28, legendY + 4);
 
-  ctx.fillStyle = '#ff0040';
-  ctx.fillRect(W - padR - 200, 8, 20, 3);
-  ctx.fillStyle = '#aaa';
-  ctx.fillText('Worst case (Displacement)', W - padR - 168, 14);
+  ctx.fillStyle = '#C45D3E';
+  ctx.fillRect(padL + 220, legendY, 22, 3);
+  ctx.fillStyle = '#3D3D3D';
+  ctx.fillText('Worst case (displacement)', padL + 248, legendY + 4);
 }
 
 // =============================================
@@ -1012,7 +984,7 @@ function drawSalaryChart(best, worst) {
 function animateResults() {
   const r = analysisResult;
 
-  // Animate gauge
+  // Animate gauge fill
   let counter = 0;
   const gaugeFill = document.getElementById('gaugeFill');
   const gaugeNumber = document.getElementById('gaugeNumber');
@@ -1024,37 +996,54 @@ function animateResults() {
       counter = r.score;
       clearInterval(gaugeInterval);
     }
-    // SVG stroke dash animation
     const offset = circumference - (counter / 100) * circumference;
     gaugeFill.style.strokeDashoffset = offset;
     gaugeNumber.textContent = counter + '%';
-  }, 25);
+  }, 20);
 
-  // Animate threat meter (after delay)
-  setTimeout(() => {
-    const threatPct = 100 - r.score;
-    document.getElementById('threatFill').style.width = threatPct + '%';
-  }, 600);
-
-  // Draw salary chart after layout
+  // Draw salary chart
   setTimeout(() => {
     drawSalaryChart(r.salaryBest, r.salaryWorst);
-  }, 200);
+  }, 400);
 
-  // Reveal sections with stagger
+  // Animate risk marker (needs a tick to let CSS transition work)
+  setTimeout(() => {
+    const riskMarker = document.getElementById('riskMarker');
+    if (riskMarker) {
+      riskMarker.style.transition = 'left 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+    }
+  }, 100);
+
+  // Timeline highlight
+  setTimeout(() => {
+    highlightTimeline(r.category);
+    const impactEl = document.getElementById('impactLabel');
+    if (impactEl) impactEl.textContent = r.waveImpact;
+  }, 600);
+
+  // Reveal sections using IntersectionObserver
+  setupRevealObserver();
+  // Also force-reveal all sections with a stagger (for immediate view)
   const sections = document.querySelectorAll('.reveal-section');
   sections.forEach((section, i) => {
     setTimeout(() => {
       section.classList.add('visible');
-    }, 200 + i * 150);
+    }, 100 + i * 120);
   });
+}
 
-  // Timeline impact highlight
-  setTimeout(() => {
-    highlightTimeline(r.category);
-    document.getElementById('impactLabel').textContent =
-      `YOUR ROLE IS MOST IMPACTED IN: ${r.waveImpact}`;
-  }, 600);
+function setupRevealObserver() {
+  if (!('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal-section').forEach(el => observer.observe(el));
 }
 
 function highlightTimeline(category) {
@@ -1065,7 +1054,6 @@ function highlightTimeline(category) {
     low_risk: 2,
     very_low_risk: 3
   };
-
   const dots = document.querySelectorAll('.tl-dot');
   const idx = dotMap[category] ?? 1;
   if (dots[idx]) dots[idx].classList.add('user-highlight');
@@ -1077,57 +1065,56 @@ function highlightTimeline(category) {
 function copyShareText() {
   const text = window._shareText || '';
   navigator.clipboard.writeText(text).then(() => {
-    const confirm = document.getElementById('copyConfirm');
-    confirm.classList.add('show');
-    setTimeout(() => confirm.classList.remove('show'), 3000);
+    showCopyConfirm();
   }).catch(() => {
-    // Fallback
     const el = document.createElement('textarea');
     el.value = text;
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-    const confirm = document.getElementById('copyConfirm');
-    confirm.classList.add('show');
-    setTimeout(() => confirm.classList.remove('show'), 3000);
+    showCopyConfirm();
   });
 }
 
+function showCopyConfirm() {
+  const confirm = document.getElementById('copyConfirm');
+  if (confirm) {
+    confirm.classList.add('show');
+    setTimeout(() => confirm.classList.remove('show'), 3000);
+  }
+}
+
 // =============================================
-// LEADERBOARD DATA
+// LEADERBOARD
 // =============================================
 const SEED_ENTRIES = [
-  { jobTitle: "Data Entry Clerk", industry: "Finance", score: 8, category: "ultra_high_risk" },
-  { jobTitle: "Telemarketer", industry: "Retail", score: 12, category: "ultra_high_risk" },
-  { jobTitle: "Legal Secretary", industry: "Legal", score: 18, category: "ultra_high_risk" },
-  { jobTitle: "Bookkeeper", industry: "Finance", score: 22, category: "ultra_high_risk" },
-  { jobTitle: "Customer Service Rep", industry: "Retail", score: 27, category: "high_risk" },
-  { jobTitle: "Content Writer", industry: "Marketing", score: 31, category: "high_risk" },
-  { jobTitle: "Market Research Analyst", industry: "Marketing", score: 35, category: "high_risk" },
-  { jobTitle: "Paralegal", industry: "Legal", score: 38, category: "high_risk" },
-  { jobTitle: "Financial Analyst", industry: "Finance", score: 43, category: "moderate_risk" },
-  { jobTitle: "Social Media Manager", industry: "Marketing", score: 46, category: "moderate_risk" },
-  { jobTitle: "Software Developer", industry: "Technology", score: 52, category: "moderate_risk" },
-  { jobTitle: "Product Manager", industry: "Technology", score: 56, category: "moderate_risk" },
-  { jobTitle: "Data Scientist", industry: "Technology", score: 58, category: "moderate_risk" },
-  { jobTitle: "UX Designer", industry: "Technology", score: 61, category: "moderate_risk" },
-  { jobTitle: "Cybersecurity Analyst", industry: "Technology", score: 68, category: "low_risk" },
-  { jobTitle: "Registered Nurse", industry: "Healthcare", score: 72, category: "low_risk" },
-  { jobTitle: "Mechanical Engineer", industry: "Manufacturing", score: 74, category: "low_risk" },
-  { jobTitle: "Surgeon", industry: "Healthcare", score: 79, category: "low_risk" },
-  { jobTitle: "Electrician", industry: "Construction", score: 85, category: "very_low_risk" },
-  { jobTitle: "Plumber", industry: "Construction", score: 87, category: "very_low_risk" },
-  { jobTitle: "Emergency Physician", industry: "Healthcare", score: 91, category: "very_low_risk" },
-  { jobTitle: "HVAC Technician", industry: "Construction", score: 89, category: "very_low_risk" },
+  { jobTitle: "Data Entry Clerk",        industry: "Finance",        score: 8,  category: "ultra_high_risk" },
+  { jobTitle: "Telemarketer",            industry: "Retail",         score: 12, category: "ultra_high_risk" },
+  { jobTitle: "Legal Secretary",         industry: "Legal",          score: 18, category: "ultra_high_risk" },
+  { jobTitle: "Bookkeeper",              industry: "Finance",        score: 22, category: "ultra_high_risk" },
+  { jobTitle: "Customer Service Rep",    industry: "Retail",         score: 27, category: "high_risk" },
+  { jobTitle: "Content Writer",          industry: "Marketing",      score: 31, category: "high_risk" },
+  { jobTitle: "Market Research Analyst", industry: "Marketing",      score: 35, category: "high_risk" },
+  { jobTitle: "Paralegal",               industry: "Legal",          score: 38, category: "high_risk" },
+  { jobTitle: "Financial Analyst",       industry: "Finance",        score: 43, category: "moderate_risk" },
+  { jobTitle: "Social Media Manager",    industry: "Marketing",      score: 46, category: "moderate_risk" },
+  { jobTitle: "Software Developer",      industry: "Technology",     score: 52, category: "moderate_risk" },
+  { jobTitle: "Product Manager",         industry: "Technology",     score: 56, category: "moderate_risk" },
+  { jobTitle: "Data Scientist",          industry: "Technology",     score: 58, category: "moderate_risk" },
+  { jobTitle: "UX Designer",             industry: "Technology",     score: 61, category: "moderate_risk" },
+  { jobTitle: "Cybersecurity Analyst",   industry: "Technology",     score: 68, category: "low_risk" },
+  { jobTitle: "Registered Nurse",        industry: "Healthcare",     score: 72, category: "low_risk" },
+  { jobTitle: "Mechanical Engineer",     industry: "Manufacturing",  score: 74, category: "low_risk" },
+  { jobTitle: "Surgeon",                 industry: "Healthcare",     score: 79, category: "low_risk" },
+  { jobTitle: "Electrician",             industry: "Construction",   score: 85, category: "very_low_risk" },
+  { jobTitle: "Plumber",                 industry: "Construction",   score: 87, category: "very_low_risk" },
+  { jobTitle: "HVAC Technician",         industry: "Construction",   score: 89, category: "very_low_risk" },
+  { jobTitle: "Emergency Physician",     industry: "Healthcare",     score: 91, category: "very_low_risk" },
 ];
 
 function initLeaderboard() {
-  leaderboardData = SEED_ENTRIES.map((e, i) => ({
-    ...e,
-    id: i,
-    isUser: false
-  }));
+  leaderboardData = SEED_ENTRIES.map((e, i) => ({ ...e, id: i, isUser: false }));
 }
 
 function addToLeaderboard(result) {
@@ -1139,25 +1126,24 @@ function addToLeaderboard(result) {
     id: 999,
     isUser: true
   };
-  // Remove previous user entry if exists
   leaderboardData = leaderboardData.filter(e => !e.isUser);
   leaderboardData.push(userLeaderboardEntry);
 }
 
-function getThreatBadge(score) {
-  if (score < 20) return '<span class="threat-badge-sm badge-critical">EXTINCTION</span>';
-  if (score < 35) return '<span class="threat-badge-sm badge-critical">CRITICAL</span>';
-  if (score < 50) return '<span class="threat-badge-sm badge-high">HIGH</span>';
-  if (score < 65) return '<span class="threat-badge-sm badge-moderate">MODERATE</span>';
-  if (score < 80) return '<span class="threat-badge-sm badge-low">LOW</span>';
-  return '<span class="threat-badge-sm badge-minimal">MINIMAL</span>';
+function getResilienceBadge(score) {
+  if (score < 20) return '<span class="threat-badge-sm badge-critical">High Risk</span>';
+  if (score < 35) return '<span class="threat-badge-sm badge-critical">Significant</span>';
+  if (score < 50) return '<span class="threat-badge-sm badge-high">Elevated</span>';
+  if (score < 65) return '<span class="threat-badge-sm badge-moderate">Moderate</span>';
+  if (score < 80) return '<span class="threat-badge-sm badge-low">Low Risk</span>';
+  return '<span class="threat-badge-sm badge-minimal">Resilient</span>';
 }
 
-function getSurvivalColor(score) {
-  if (score < 35) return '#ff0040';
-  if (score < 50) return '#ff6633';
-  if (score < 65) return '#ffb000';
-  return '#00ff41';
+function getScoreColor(score) {
+  if (score < 35) return '#C45D3E';
+  if (score < 50) return '#C49A3C';
+  if (score < 65) return '#7A9E7E';
+  return '#2C3E50';
 }
 
 function renderLeaderboard(filter) {
@@ -1170,14 +1156,14 @@ function renderLeaderboard(filter) {
   const tbody = document.getElementById('leaderboardBody');
   tbody.innerHTML = data.map((entry, i) => {
     const rank = i + 1;
-    const color = getSurvivalColor(entry.score);
+    const color = getScoreColor(entry.score);
     return `
       <tr class="${entry.isUser ? 'user-row' : ''}">
         <td><span class="lb-rank ${rank <= 3 ? 'top3' : ''}">${rank}</span></td>
-        <td class="lb-job">${entry.jobTitle}${entry.isUser ? ' ← YOU' : ''}</td>
+        <td class="lb-job">${entry.jobTitle}${entry.isUser ? ' &nbsp;<span style="font-size:0.7rem;font-weight:700;color:#C45D3E;letter-spacing:0.06em;text-transform:uppercase;">YOU</span>' : ''}</td>
         <td>${entry.industry}</td>
         <td class="lb-survival" style="color:${color}">${entry.score}%</td>
-        <td>${getThreatBadge(entry.score)}</td>
+        <td>${getResilienceBadge(entry.score)}</td>
       </tr>
     `;
   }).join('');
@@ -1193,29 +1179,14 @@ function filterLeaderboard(mode, btn) {
 // INIT
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
-  initMatrix();
   initLeaderboard();
-
-  // Typing animation for subtitle
-  const subtitleEl = document.getElementById('subtitleType');
-  setTimeout(() => {
-    typeText(subtitleEl, 'How long until the machines take your job?', 45);
-  }, 1000);
 
   // Initialize slider
   const slider = document.getElementById('experience');
-  if (slider) {
-    updateSlider(slider);
-  }
-
-  // Set timestamp
-  const ts = document.getElementById('resultsTimestamp');
-  if (ts) {
-    ts.textContent = new Date().toLocaleString();
-  }
+  if (slider) updateSlider(slider);
 });
 
-// Show results page if somehow navigated there with no data
+// Expose globals
 window.showPage = showPage;
 window.filterJobs = filterJobs;
 window.updateSlider = updateSlider;

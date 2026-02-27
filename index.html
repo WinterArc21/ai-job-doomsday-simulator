@@ -1,487 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI JOB DOOMSDAY SIMULATOR 2027</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Job Impact Analyzer — Evidence-Based Career Assessment</title>
+  <meta name="description" content="An evidence-based assessment of how AI will impact your career, powered by research from OpenAI, WEF, Goldman Sachs, and McKinsey." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- CRT Overlay -->
-  <div class="crt-overlay"></div>
-  <div class="scanlines"></div>
 
-  <!-- TICKER BAR -->
-  <div class="ticker-bar">
-    <div class="ticker-inner">
-      <span class="ticker-item alert">⚠ THREAT ALERT</span>
-      <span class="ticker-item">300M JOBS AT RISK — <em>Goldman Sachs</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">80% OF US WORKERS IMPACTED — <em>OpenAI/UPenn</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">55,000 AI LAYOFFS IN 2025 — <em>Challenger</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">50% JOBS DISPLACED BY 2027 — <em>Kai-Fu Lee</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">92M JOBS GONE BY 2030 — <em>WEF</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">56% WAGE PREMIUM FOR AI USERS — <em>PwC</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">39% OF SKILLS OBSOLETE BY 2030 — <em>WEF</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">276K+ TECH WORKERS LOST JOBS 2024-2025 — <em>Careery</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item alert">⚠ THREAT ALERT</span>
-      <span class="ticker-item">300M JOBS AT RISK — <em>Goldman Sachs</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">80% OF US WORKERS IMPACTED — <em>OpenAI/UPenn</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">55,000 AI LAYOFFS IN 2025 — <em>Challenger</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">50% JOBS DISPLACED BY 2027 — <em>Kai-Fu Lee</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">92M JOBS GONE BY 2030 — <em>WEF</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">56% WAGE PREMIUM FOR AI USERS — <em>PwC</em></span>
-      <span class="ticker-sep">///</span>
-      <span class="ticker-item">39% OF SKILLS OBSOLETE BY 2030 — <em>WEF</em></span>
-      <span class="ticker-sep">///</span>
-    </div>
+  <!-- ========== LANDING PAGE ========== -->
+  <div id="landing" class="page active">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="site-brand">AI Job Impact Analyzer</div>
+        <nav class="site-nav">
+          <a href="#" onclick="showPage('form'); return false;">Take Assessment</a>
+          <a href="#" onclick="showPage('leaderboard'); return false;">How Roles Compare</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Evidence-Based Career Assessment</div>
+        <h1 class="hero-title">How Will AI Impact<br>Your Career?</h1>
+        <p class="hero-subtitle">An independent assessment powered by research from OpenAI, the World Economic Forum, Goldman Sachs, McKinsey &amp; Company, and 15+ institutional sources.</p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">300M</div>
+            <div class="stat-label">jobs at risk globally</div>
+            <div class="stat-source"><a href="https://www.goldmansachs.com/insights/articles/generative-ai-may-raise-global-gdp-by-7-percent" target="_blank" rel="noopener noreferrer">Goldman Sachs, 2023</a></div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="stat-number">80%</div>
+            <div class="stat-label">of US workers affected</div>
+            <div class="stat-source"><a href="https://www.vice.com/en/article/openai-research-says-80-of-us-workers-will-have-jobs-impacted-by-gpt/" target="_blank" rel="noopener noreferrer">OpenAI Research, 2023</a></div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="stat-number">56%</div>
+            <div class="stat-label">wage premium for AI-skilled workers</div>
+            <div class="stat-source"><a href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-jobs-barometer.html" target="_blank" rel="noopener noreferrer">PwC AI Jobs Barometer, 2023</a></div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="showPage('form')">Analyze Your Role</button>
+          <p class="cta-note">Free assessment · No account required · Takes 60 seconds</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-context">
+      <div class="container">
+        <div class="context-grid">
+          <div class="context-item">
+            <div class="context-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <div class="context-text">
+              <h3>Research-grounded analysis</h3>
+              <p>Draws on published data from 15+ institutional research sources including WEF Future of Jobs, Goldman Sachs AI research, and Oxford University automation studies.</p>
+            </div>
+          </div>
+          <div class="context-item">
+            <div class="context-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="context-text">
+              <h3>Personalized to your situation</h3>
+              <p>Your role, industry, experience level, and current AI tool usage all influence your assessment — reflecting the nuance of real-world disruption patterns.</p>
+            </div>
+          </div>
+          <div class="context-item">
+            <div class="context-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="context-text">
+              <h3>Actionable skill guidance</h3>
+              <p>Beyond a score, you receive specific skill recommendations tailored to your industry and role — a roadmap for navigating the transition ahead.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer-simple">
+      <div class="container">
+        <p>AI Job Impact Analyzer — An evidence-based career assessment tool. Results are for informational purposes only.</p>
+        <p class="footer-sources">Sources: <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">WEF Future of Jobs</a> · <a href="https://www.goldmansachs.com/insights/articles/generative-ai-may-raise-global-gdp-by-7-percent" target="_blank" rel="noopener noreferrer">Goldman Sachs AI Report</a> · <a href="https://www.mckinsey.com/featured-insights/future-of-work" target="_blank" rel="noopener noreferrer">McKinsey Global Institute</a></p>
+      </div>
+    </footer>
   </div>
 
-  <!-- LANDING PAGE -->
-  <section id="landing" class="page active">
-    <div class="matrix-bg" id="matrixCanvas">
-      <canvas id="matrixBg"></canvas>
-    </div>
+  <!-- ========== FORM PAGE ========== -->
+  <div id="form-page" class="page">
 
-    <div class="landing-content">
-      <div class="landing-tag">[ CLASSIFIED // THREAT LEVEL: MAXIMUM ]</div>
-      <h1 class="main-title"><span class="glitch-wrap" data-text="AI JOB DOOMSDAY">AI JOB DOOMSDAY</span><br><span class="title-line2 glitch-wrap2" data-text="SIMULATOR 2027">SIMULATOR 2027</span></h1>
-      <div class="subtitle-type" id="subtitleType"></div>
-      <div class="stat-row">
-        <div class="stat-pill red">50% of jobs by 2027</div>
-        <div class="stat-pill amber">300M at risk</div>
-        <div class="stat-pill green">AI users earn 56% more</div>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="site-brand"><a href="#" onclick="showPage('landing'); return false;">AI Job Impact Analyzer</a></div>
+        <nav class="site-nav">
+          <a href="#" onclick="showPage('landing'); return false;">← Back</a>
+        </nav>
       </div>
-      <button class="enter-btn pulse-btn" onclick="showPage('form')">
-        <span class="btn-text">⚡ ENTER THE SIMULATOR</span>
-        <span class="btn-sub">Your fate awaits — if you dare</span>
-      </button>
-      <div class="landing-warning">
-        <span class="blink-cursor">▋</span> Based on data from OpenAI, WEF, Goldman Sachs, McKinsey, IMF, PwC, Stanford & more
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- INPUT FORM PAGE -->
-  <section id="form-page" class="page">
-    <div class="form-container">
-      <div class="terminal-header">
-        <span class="term-dot red-dot"></span>
-        <span class="term-dot amber-dot"></span>
-        <span class="term-dot green-dot"></span>
-        <span class="term-title">AI_THREAT_ANALYSIS.exe — v2.027.1</span>
-      </div>
-      <div class="terminal-body">
-        <div class="terminal-line">
-          <span class="prompt">SYSTEM</span><span class="prompt-arrow">❯❯</span> <span class="green-text">GLOBAL AI THREAT ASSESSMENT TERMINAL</span>
+    <section class="form-section">
+      <div class="form-container">
+        <div class="form-header">
+          <div class="form-eyebrow">Step 1 of 1</div>
+          <h2 class="form-title">Tell Us About Your Role</h2>
+          <p class="form-subtitle">We'll cross-reference your profile against disruption research to generate a personalized resilience assessment.</p>
         </div>
-        <div class="terminal-line">
-          <span class="prompt">STATUS</span><span class="prompt-arrow">❯❯</span> <span class="amber-text">AWAITING SUBJECT CLASSIFICATION...</span>
-        </div>
-        <div class="terminal-line muted">// Enter your details to calculate your AI survival probability</div>
-        <div class="terminal-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 
-        <form id="analysisForm" onsubmit="return false;">
+        <div class="form-card">
 
-          <div class="form-field">
-            <label class="field-label"><span class="label-prompt">INPUT_01</span> JOB TITLE</label>
+          <!-- Job Title -->
+          <div class="field-group">
+            <label class="field-label" for="jobTitle">Job Title</label>
             <div class="input-wrapper">
-              <span class="input-prefix">$</span>
-              <input type="text" id="jobTitle" class="term-input" placeholder="Type your job title..." autocomplete="off" oninput="filterJobs(this.value)">
-              <span class="cursor-blink">█</span>
+              <input
+                type="text"
+                id="jobTitle"
+                class="field-input"
+                placeholder="e.g. Software Engineer, Registered Nurse, Accountant…"
+                oninput="filterJobs(this.value)"
+                autocomplete="off"
+              />
+              <div id="jobDropdown" class="job-dropdown hidden"></div>
             </div>
-            <div id="jobDropdown" class="job-dropdown hidden"></div>
           </div>
 
-          <div class="form-field">
-            <label class="field-label"><span class="label-prompt">INPUT_02</span> YEARS OF EXPERIENCE</label>
+          <!-- Years of Experience -->
+          <div class="field-group">
+            <label class="field-label">Years of Experience
+              <span class="field-value-display" id="expDisplay">5</span>
+            </label>
             <div class="slider-container">
-              <span class="slider-val" id="expDisplay">0</span>
-              <input type="range" id="experience" class="term-slider" min="0" max="30" value="0" oninput="updateSlider(this)">
-              <span class="slider-max">30+</span>
-            </div>
-            <div class="slider-labels">
-              <span>Newbie</span><span>Veteran</span><span>Legend</span>
+              <input
+                type="range"
+                id="experience"
+                class="field-slider"
+                min="0"
+                max="30"
+                value="5"
+                oninput="updateSlider(this)"
+              />
+              <div class="slider-labels">
+                <span>0</span>
+                <span>5</span>
+                <span>10</span>
+                <span>20</span>
+                <span>30+</span>
+              </div>
             </div>
           </div>
 
-          <div class="form-field">
-            <label class="field-label"><span class="label-prompt">INPUT_03</span> INDUSTRY SECTOR</label>
+          <!-- Industry -->
+          <div class="field-group">
+            <label class="field-label" for="industry">Industry</label>
             <div class="select-wrapper">
-              <span class="input-prefix">$</span>
-              <select id="industry" class="term-select">
-                <option value="">-- SELECT SECTOR --</option>
+              <select id="industry" class="field-select">
                 <option value="Technology">Technology</option>
                 <option value="Finance">Finance</option>
                 <option value="Healthcare">Healthcare</option>
                 <option value="Education">Education</option>
                 <option value="Legal">Legal</option>
-                <option value="Marketing">Marketing / Advertising</option>
+                <option value="Marketing">Marketing</option>
                 <option value="Manufacturing">Manufacturing</option>
-                <option value="Retail">Retail / E-Commerce</option>
-                <option value="Government">Government / Public Sector</option>
-                <option value="Creative">Creative / Media / Entertainment</option>
-                <option value="Construction">Construction / Trades</option>
-                <option value="Transportation">Transportation / Logistics</option>
+                <option value="Retail">Retail</option>
+                <option value="Government">Government</option>
+                <option value="Creative">Creative Industries</option>
+                <option value="Construction">Construction &amp; Trades</option>
+                <option value="Transportation">Transportation</option>
                 <option value="Other">Other</option>
               </select>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label class="field-label"><span class="label-prompt">INPUT_04</span> SENIORITY LEVEL</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="seniority" value="entry"> <span>Entry Level</span></label>
-              <label class="radio-opt"><input type="radio" name="seniority" value="mid" checked> <span>Mid Level</span></label>
-              <label class="radio-opt"><input type="radio" name="seniority" value="senior"> <span>Senior</span></label>
-              <label class="radio-opt"><input type="radio" name="seniority" value="executive"> <span>Executive</span></label>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label class="field-label"><span class="label-prompt">INPUT_05</span> CURRENT AI TOOL USAGE</label>
-            <div class="radio-group ai-usage">
-              <label class="radio-opt"><input type="radio" name="aiUsage" value="never"> <span>Never</span></label>
-              <label class="radio-opt"><input type="radio" name="aiUsage" value="occasionally" checked> <span>Occasionally</span></label>
-              <label class="radio-opt"><input type="radio" name="aiUsage" value="regularly"> <span>Regularly</span></label>
-              <label class="radio-opt danger-opt"><input type="radio" name="aiUsage" value="daily"> <span>Daily Power User 🔥</span></label>
-            </div>
-          </div>
-
-          <div class="terminal-divider">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
-
-          <div class="form-actions">
-            <button type="button" class="analyze-btn" onclick="runAnalysis()">
-              <span class="analyze-icon">☠</span>
-              <span class="analyze-text">ANALYZE MY FATE</span>
-              <span class="analyze-sub">Initializing AI threat assessment...</span>
-            </button>
-            <div class="form-warning">⚠ WARNING: Results may cause existential dread. Viewer discretion advised.</div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOADING PAGE -->
-  <section id="loading-page" class="page">
-    <div class="loading-container">
-      <div class="loading-skull">☠</div>
-      <div class="loading-title">THREAT ASSESSMENT IN PROGRESS</div>
-      <div class="loading-bar-wrap">
-        <div class="loading-bar-bg">
-          <div class="loading-bar-fill" id="loadingBar"></div>
-        </div>
-        <div class="loading-percent" id="loadingPercent">0%</div>
-      </div>
-      <div class="loading-messages" id="loadingMessages">
-        <div class="load-msg active" id="msg0">▶ ACCESSING GLOBAL AI THREAT DATABASE...</div>
-        <div class="load-msg" id="msg1">▶ CROSS-REFERENCING OPENAI EXPOSURE INDEX...</div>
-        <div class="load-msg" id="msg2">▶ CONSULTING McKINSEY ALGORITHM v4.2...</div>
-        <div class="load-msg" id="msg3">▶ ANALYZING WEF FUTURE OF JOBS MODEL...</div>
-        <div class="load-msg" id="msg4">▶ RUNNING GOLDMAN SACHS DISPLACEMENT MATRIX...</div>
-        <div class="load-msg" id="msg5">▶ CALCULATING SURVIVAL PROBABILITY...</div>
-        <div class="load-msg" id="msg6">▶ GENERATING DOOMSDAY SCENARIOS...</div>
-        <div class="load-msg success" id="msg7">✓ ANALYSIS COMPLETE. BRACE FOR IMPACT.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESULTS PAGE -->
-  <section id="results-page" class="page">
-    <div class="results-container">
-
-      <!-- Results Header -->
-      <div class="results-header">
-        <button class="back-btn" onclick="showPage('form')">← RESTART</button>
-        <div class="results-title-wrap">
-          <div class="results-subject" id="resultsSubject">THREAT ANALYSIS: —</div>
-          <h2 class="results-main-title">DOOMSDAY REPORT</h2>
-        </div>
-        <div class="results-timestamp" id="resultsTimestamp"></div>
-      </div>
-
-      <!-- Section A: Survival Probability -->
-      <div class="results-section reveal-section" id="sectionA">
-        <div class="section-header">
-          <span class="section-tag">SECTION A</span>
-          <span class="section-title">SURVIVAL PROBABILITY</span>
-        </div>
-        <div class="survival-layout">
-          <div class="gauge-wrap">
-            <svg class="gauge-svg" viewBox="0 0 200 200">
-              <circle class="gauge-bg" cx="100" cy="100" r="85" fill="none" stroke="#1a1a1a" stroke-width="14"/>
-              <circle class="gauge-track" cx="100" cy="100" r="85" fill="none" stroke="#111" stroke-width="14" stroke-dasharray="534" stroke-dashoffset="0"/>
-              <circle class="gauge-fill" id="gaugeFill" cx="100" cy="100" r="85" fill="none" stroke="#00ff41" stroke-width="14"
-                stroke-dasharray="534" stroke-dashoffset="534" stroke-linecap="round"
-                transform="rotate(-90 100 100)"/>
-              <text class="gauge-number" id="gaugeNumber" x="100" y="95" text-anchor="middle" dominant-baseline="middle">0%</text>
-              <text class="gauge-label" x="100" y="120" text-anchor="middle">SURVIVAL</text>
-            </svg>
-            <div class="threat-badge" id="threatBadge">ANALYZING...</div>
-          </div>
-          <div class="survival-info">
-            <div class="survival-verdict" id="survivalVerdict"></div>
-            <div class="survival-score-bar">
-              <div class="score-label">THREAT METER</div>
-              <div class="threat-meter">
-                <div class="threat-fill" id="threatFill"></div>
-                <div class="threat-markers">
-                  <span>SAFE</span><span>MODERATE</span><span>HIGH</span><span>CRITICAL</span>
-                </div>
+              <div class="select-arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
               </div>
             </div>
-            <div class="survival-source">
-              <span class="source-icon">📡</span>
-              Based on <a href="https://www.vice.com/en/article/openai-research-says-80-of-us-workers-will-have-jobs-impacted-by-gpt/" target="_blank" rel="noopener noreferrer">OpenAI GPT Exposure Study</a>,
-              <a href="https://fortune.com/article/what-are-the-jobs-most-exposed-to-ai-microsoft-research/" target="_blank" rel="noopener noreferrer">Microsoft AI Applicability Scores</a>,
-              and <a href="https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf" target="_blank" rel="noopener noreferrer">WEF Future of Jobs 2025</a>
+          </div>
+
+          <!-- Seniority Level -->
+          <div class="field-group">
+            <label class="field-label">Seniority Level</label>
+            <div class="segmented-control" id="seniorityControl">
+              <label class="seg-option">
+                <input type="radio" name="seniority" value="entry" />
+                <span class="seg-label">Entry Level</span>
+              </label>
+              <label class="seg-option">
+                <input type="radio" name="seniority" value="mid" checked />
+                <span class="seg-label">Mid Level</span>
+              </label>
+              <label class="seg-option">
+                <input type="radio" name="seniority" value="senior" />
+                <span class="seg-label">Senior</span>
+              </label>
+              <label class="seg-option">
+                <input type="radio" name="seniority" value="executive" />
+                <span class="seg-label">Executive</span>
+              </label>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Section B: Threat Timeline -->
-      <div class="results-section reveal-section" id="sectionB">
-        <div class="section-header">
-          <span class="section-tag">SECTION B</span>
-          <span class="section-title">THREAT TIMELINE</span>
-        </div>
-        <div class="timeline-wrap">
-          <div class="timeline-rail">
-            <div class="timeline-point" data-year="2023-25">
-              <div class="tl-dot wave1-dot"></div>
-              <div class="tl-year">2023–2025</div>
-              <div class="tl-label">Wave 1</div>
-              <div class="tl-desc">Admin & Data<br><span class="tl-pct">60–80% automated</span></div>
-            </div>
-            <div class="timeline-point" data-year="2025-27">
-              <div class="tl-dot wave2-dot"></div>
-              <div class="tl-year">2025–2027</div>
-              <div class="tl-label">Wave 2</div>
-              <div class="tl-desc">Knowledge Work<br><span class="tl-pct">40–60% disrupted</span></div>
-            </div>
-            <div class="timeline-point" data-year="2027-30">
-              <div class="tl-dot wave3-dot"></div>
-              <div class="tl-year">2027–2030</div>
-              <div class="tl-label">Wave 3</div>
-              <div class="tl-desc">Cognitive / Legal / Medical<br><span class="tl-pct">30–50% disrupted</span></div>
-            </div>
-            <div class="timeline-point" data-year="2030">
-              <div class="tl-dot future-dot"></div>
-              <div class="tl-year">2030</div>
-              <div class="tl-label">Post-AGI</div>
-              <div class="tl-desc">New Economy<br><span class="tl-pct">+78M net new jobs</span></div>
+          <!-- AI Tool Usage -->
+          <div class="field-group">
+            <label class="field-label">Current AI Tool Usage</label>
+            <div class="segmented-control" id="aiUsageControl">
+              <label class="seg-option">
+                <input type="radio" name="aiUsage" value="never" />
+                <span class="seg-label">Never</span>
+              </label>
+              <label class="seg-option">
+                <input type="radio" name="aiUsage" value="occasionally" checked />
+                <span class="seg-label">Occasionally</span>
+              </label>
+              <label class="seg-option">
+                <input type="radio" name="aiUsage" value="regularly" />
+                <span class="seg-label">Regularly</span>
+              </label>
+              <label class="seg-option">
+                <input type="radio" name="aiUsage" value="daily" />
+                <span class="seg-label">Daily</span>
+              </label>
             </div>
           </div>
-          <div class="user-impact-bar" id="userImpactBar">
-            <span class="impact-label" id="impactLabel">YOUR ROLE IS MOST IMPACTED IN: —</span>
-          </div>
-        </div>
-        <div class="timeline-source">Source: <a href="https://www.cincinnati.com/press-release/story/27790/new-research-reveals-276000-tech-workers-lost-jobs-to-ai-driven-layoffs-in-2024-2025/" target="_blank" rel="noopener noreferrer">Careery 2026 Three-Wave Disruption Model</a></div>
-      </div>
 
-      <!-- Section C: Salary Impact -->
-      <div class="results-section reveal-section" id="sectionC">
-        <div class="section-header">
-          <span class="section-tag">SECTION C</span>
-          <span class="section-title">SALARY IMPACT PROJECTION</span>
-        </div>
-        <div class="salary-chart-wrap">
-          <canvas id="salaryChart" width="700" height="280"></canvas>
-        </div>
-        <div class="salary-notes">
-          <div class="salary-note best"><span>▲ BEST CASE:</span> AI augmentation could raise your salary <span id="bestSalaryPct">+21%</span> by 2028. Workers who master AI tools see the largest gains.</div>
-          <div class="salary-note worst"><span>▼ WORST CASE:</span> Displacement scenario projects a <span id="worstSalaryPct">-30%</span> salary impact during forced career transition.</div>
-        </div>
-        <div class="salary-sources">
-          <span>Sources: </span>
-          <a href="https://www.foxbusiness.com/economy/ai-raises-average-wages-21-substantially-reduces-wage-inequality-researchers-find" target="_blank" rel="noopener noreferrer">Stanford +21% wage study</a> •
-          <a href="https://www.dallasfed.org/research/economics/2026/0224" target="_blank" rel="noopener noreferrer">Dallas Fed experience premium</a> •
-          <a href="https://customcareer.miami.edu/blog/2026/01/09/8-skills-getting-more-valuable-as-ai-gets-smarter/" target="_blank" rel="noopener noreferrer">PwC 56% AI wage premium</a>
-        </div>
-      </div>
+          <button class="btn-primary btn-full" onclick="runAnalysis()">Get Your Assessment →</button>
+          <p class="form-disclaimer">Based on research from 15+ institutional sources. Results are for informational purposes only and should not be construed as professional career advice.</p>
 
-      <!-- Section D: Four Futures -->
-      <div class="results-section reveal-section" id="sectionD">
-        <div class="section-header">
-          <span class="section-tag">SECTION D</span>
-          <span class="section-title">YOUR FOUR POSSIBLE FUTURES</span>
-        </div>
-        <div class="futures-grid" id="futuresGrid">
-          <!-- Populated by JS -->
         </div>
       </div>
+    </section>
 
-      <!-- Section E: Skill Loadout -->
-      <div class="results-section reveal-section" id="sectionE">
-        <div class="section-header">
-          <span class="section-tag">SECTION E</span>
-          <span class="section-title">SURVIVAL SKILLS LOADOUT</span>
-        </div>
-        <div class="skills-grid" id="skillsGrid">
-          <!-- Populated by JS -->
-        </div>
-        <div class="skills-source">
-          Source: <a href="https://fortune.com/2025/12/27/occupations-most-exposed-to-ai-automation-outperform-vanguard/" target="_blank" rel="noopener noreferrer">Vanguard 2025</a> •
-          <a href="https://customcareer.miami.edu/blog/2026/01/09/8-skills-getting-more-valuable-as-ai-gets-smarter/" target="_blank" rel="noopener noreferrer">PwC AI Skills Barometer</a>
-        </div>
-      </div>
+  </div>
 
-      <!-- Section F: Expert Warnings -->
-      <div class="results-section reveal-section" id="sectionF">
-        <div class="section-header">
-          <span class="section-tag">SECTION F</span>
-          <span class="section-title">INTERCEPTED EXPERT TRANSMISSIONS</span>
-        </div>
-        <div class="quotes-grid" id="quotesGrid">
-          <!-- Populated by JS -->
-        </div>
+  <!-- ========== LOADING PAGE ========== -->
+  <div id="loading-page" class="page">
+    <div class="loading-container">
+      <div class="loading-logo">AI Job Impact Analyzer</div>
+      <div class="loading-spinner">
+        <svg class="spinner-ring" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="26" fill="none" stroke="#EDE8DE" stroke-width="3"/>
+          <circle cx="30" cy="30" r="26" fill="none" stroke="#C45D3E" stroke-width="3"
+                  stroke-dasharray="163" stroke-dashoffset="163"
+                  class="spinner-arc"/>
+        </svg>
       </div>
-
-      <!-- Section G: Big Picture Stats -->
-      <div class="results-section reveal-section" id="sectionG">
-        <div class="section-header">
-          <span class="section-tag">SECTION G</span>
-          <span class="section-title">THE BIG PICTURE: GLOBAL AI IMPACT</span>
-        </div>
-        <div class="stats-grid">
-          <div class="stat-card red-card">
-            <div class="stat-num">300M</div>
-            <div class="stat-desc">Jobs at risk globally</div>
-            <div class="stat-src"><a href="https://finance.yahoo.com/news/goldman-sachs-warns-ai-fueled-layoffs-could-raise-the-unemployment-rate-this-year-chart-154251740.html" target="_blank" rel="noopener noreferrer">Goldman Sachs</a></div>
-          </div>
-          <div class="stat-card amber-card">
-            <div class="stat-num">80%</div>
-            <div class="stat-desc">US workforce — 10%+ tasks impacted</div>
-            <div class="stat-src"><a href="https://www.vice.com/en/article/openai-research-says-80-of-us-workers-will-have-jobs-impacted-by-gpt/" target="_blank" rel="noopener noreferrer">OpenAI/UPenn Study</a></div>
-          </div>
-          <div class="stat-card red-card">
-            <div class="stat-num">92M</div>
-            <div class="stat-desc">Jobs displaced by 2030</div>
-            <div class="stat-src"><a href="https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf" target="_blank" rel="noopener noreferrer">WEF 2025</a></div>
-          </div>
-          <div class="stat-card green-card">
-            <div class="stat-num">170M</div>
-            <div class="stat-desc">New jobs created by 2030</div>
-            <div class="stat-src"><a href="https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf" target="_blank" rel="noopener noreferrer">WEF 2025</a></div>
-          </div>
-          <div class="stat-card green-card">
-            <div class="stat-num">56%</div>
-            <div class="stat-desc">Wage premium for AI-skilled workers</div>
-            <div class="stat-src"><a href="https://customcareer.miami.edu/blog/2026/01/09/8-skills-getting-more-valuable-as-ai-gets-smarter/" target="_blank" rel="noopener noreferrer">PwC AI Barometer</a></div>
-          </div>
-          <div class="stat-card amber-card">
-            <div class="stat-num">39%</div>
-            <div class="stat-desc">Existing skills outdated by 2030</div>
-            <div class="stat-src"><a href="https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf" target="_blank" rel="noopener noreferrer">WEF 2025</a></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Share Button -->
-      <div class="results-section share-section reveal-section" id="sectionShare">
-        <div class="share-card" id="shareCard">
-          <div class="share-title">📡 BROADCAST YOUR DOOMSDAY SCORE</div>
-          <div class="share-content" id="shareContent"></div>
-          <div class="share-buttons">
-            <button class="share-btn" onclick="copyShareText()">📋 COPY TO CLIPBOARD</button>
-            <button class="share-btn green-share" onclick="showPage('leaderboard')">🏆 VIEW GLOBAL RANKINGS</button>
-          </div>
-          <div class="copy-confirm" id="copyConfirm">✓ COPIED TO CLIPBOARD</div>
-        </div>
-      </div>
-
-      <!-- Methodology -->
-      <div class="results-section methodology-section reveal-section" id="sectionMeth">
-        <div class="section-header">
-          <span class="section-tag">SYSTEM</span>
-          <span class="section-title">METHODOLOGY & SOURCES</span>
-        </div>
-        <div class="method-text">
-          <p>Survival probability is calculated using a multi-factor model: <strong>Base score</strong> from job category AI exposure research (OpenAI GPT Exposure, Microsoft AI Applicability Index, Brookings Institution) + <strong>Experience modifier</strong> (Dallas Fed: senior workers show 8.5% wage gains vs entry-level declines) + <strong>AI usage modifier</strong> (PwC: AI-skilled workers earn 56% more) + <strong>Seniority modifier</strong> (Anthropic/Brookings: entry-level faces greatest risk) + small random variance.</p>
-          <p>This is a simulation for educational purposes. Actual outcomes vary by individual, company, and macroeconomic factors.</p>
-        </div>
-        <div class="source-links">
-          <strong>KEY SOURCES:</strong>
-          <a href="https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf" target="_blank" rel="noopener noreferrer">WEF Future of Jobs 2025</a>
-          <a href="https://www.vice.com/en/article/openai-research-says-80-of-us-workers-will-have-jobs-impacted-by-gpt/" target="_blank" rel="noopener noreferrer">OpenAI/UPenn GPT Study</a>
-          <a href="https://finance.yahoo.com/news/goldman-sachs-warns-ai-fueled-layoffs-could-raise-the-unemployment-rate-this-year-chart-154251740.html" target="_blank" rel="noopener noreferrer">Goldman Sachs</a>
-          <a href="https://fortune.com/article/what-are-the-jobs-most-exposed-to-ai-microsoft-research/" target="_blank" rel="noopener noreferrer">Microsoft AI Study</a>
-          <a href="https://www.brookings.edu/articles/generative-ai-the-american-worker-and-the-future-of-work/" target="_blank" rel="noopener noreferrer">Brookings Institution</a>
-          <a href="https://customcareer.miami.edu/blog/2026/01/09/8-skills-getting-more-valuable-as-ai-gets-smarter/" target="_blank" rel="noopener noreferrer">PwC AI Barometer</a>
-          <a href="https://codingscape.com/blog/40-percent-of-global-employment-is-exposed-to-ai-imf-report" target="_blank" rel="noopener noreferrer">IMF Gen-AI Report</a>
-          <a href="https://www.foxbusiness.com/economy/ai-raises-average-wages-21-substantially-reduces-wage-inequality-researchers-find" target="_blank" rel="noopener noreferrer">Stanford Wages Study</a>
-          <a href="https://www.dallasfed.org/research/economics/2026/0224" target="_blank" rel="noopener noreferrer">Dallas Fed</a>
-          <a href="https://fortune.com/2025/12/27/occupations-most-exposed-to-ai-automation-outperform-vanguard/" target="_blank" rel="noopener noreferrer">Vanguard 2025</a>
-          <a href="https://fortune.com/2024/05/25/ai-job-displacement-forecast-50-percent-2027-kai-fu-lee-chatgpt-openai/" target="_blank" rel="noopener noreferrer">Kai-Fu Lee</a>
-          <a href="https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic" target="_blank" rel="noopener noreferrer">Dario Amodei / Anthropic</a>
-          <a href="https://privatebank.jpmorgan.com/apac/en/insights/markets-and-investing/tmt/why-ai-might-strain-the-economy-before-it-booms" target="_blank" rel="noopener noreferrer">J.P. Morgan</a>
-          <a href="https://research.aimultiple.com/ai-job-loss/" target="_blank" rel="noopener noreferrer">Challenger, Gray & Christmas</a>
-          <a href="https://www.cincinnati.com/press-release/story/27790/new-research-reveals-276000-tech-workers-lost-jobs-to-ai-driven-layoffs-in-2024-2025/" target="_blank" rel="noopener noreferrer">Careery 2026</a>
-        </div>
-        <div class="disclaimer">⚠ DISCLAIMER: This is a simulation based on publicly available research data. Actual outcomes will vary significantly based on individual circumstances, industry, geography, company decisions, and broader economic trends. Not financial or career advice.</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LEADERBOARD PAGE -->
-  <section id="leaderboard-page" class="page">
-    <div class="leaderboard-container">
-      <div class="lb-header">
-        <button class="back-btn" onclick="showPage('results')">← BACK TO REPORT</button>
-        <h2 class="lb-title">GLOBAL SURVIVAL RANKINGS</h2>
-        <div class="lb-sub">Real-time threat assessment across all analyzed roles</div>
-      </div>
-      <div class="lb-filter-row">
-        <button class="lb-filter active" onclick="filterLeaderboard('all', this)">ALL SUBJECTS</button>
-        <button class="lb-filter" onclick="filterLeaderboard('safe', this)">MOST SAFE ▲</button>
-        <button class="lb-filter" onclick="filterLeaderboard('doomed', this)">MOST DOOMED ▼</button>
-      </div>
-      <div class="lb-table-wrap">
-        <table class="lb-table">
-          <thead>
-            <tr>
-              <th>RANK</th>
-              <th>JOB TITLE</th>
-              <th>INDUSTRY</th>
-              <th>SURVIVAL %</th>
-              <th>THREAT LEVEL</th>
-            </tr>
-          </thead>
-          <tbody id="leaderboardBody">
-          </tbody>
-        </table>
+      <div class="loading-status" id="loadingStatus">Preparing analysis…</div>
+      <div class="loading-messages">
+        <div class="load-msg" id="msg0">Identifying role category</div>
+        <div class="load-msg" id="msg1">Cross-referencing disruption research</div>
+        <div class="load-msg" id="msg2">Applying experience modifiers</div>
+        <div class="load-msg" id="msg3">Generating scenario probabilities</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span>AI JOB DOOMSDAY SIMULATOR 2027</span>
-      <span class="footer-sep">///</span>
-      <span>Educational simulation based on publicly available AI research</span>
-      <span class="footer-sep">///</span>
-      <span class="blink-text">SYSTEM ONLINE</span>
+  <!-- ========== RESULTS PAGE ========== -->
+  <div id="results-page" class="page">
+
+    <!-- Results Header Bar -->
+    <div class="results-header">
+      <div class="results-header-inner">
+        <div class="results-header-left">
+          <div class="results-brand">AI Job Impact Analyzer</div>
+          <div class="results-meta">
+            <span id="resultsSubject" class="results-subject"></span>
+            <span class="results-sep">·</span>
+            <span id="resultsTimestamp" class="results-timestamp"></span>
+          </div>
+        </div>
+        <div class="results-header-right">
+          <a href="#" class="results-start-over" onclick="showPage('landing'); return false;">Start Over</a>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <div class="results-body">
+      <div class="results-container">
+
+        <!-- Section 1: AI Resilience Score -->
+        <section class="result-section reveal-section" id="section-score">
+          <div class="section-label">Section 01</div>
+          <h2 class="section-title">AI Resilience Score</h2>
+          <div class="score-layout">
+            <div class="score-gauge-wrapper">
+              <svg class="score-gauge" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#EDE8DE" stroke-width="10"/>
+                <circle
+                  id="gaugeFill"
+                  cx="100" cy="100" r="85"
+                  fill="none"
+                  stroke="#5A7A5E"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                  stroke-dasharray="534"
+                  stroke-dashoffset="534"
+                  transform="rotate(-90 100 100)"
+                  style="transition: stroke-dashoffset 1.5s ease-in-out, stroke 0.5s ease"
+                />
+                <text id="gaugeNumber" x="100" y="95" text-anchor="middle" class="gauge-number" fill="#1A1A1A">0%</text>
+                <text x="100" y="118" text-anchor="middle" class="gauge-label-text" fill="#6B6B6B">Resilience</text>
+              </svg>
+              <div class="score-badge-row">
+                <div id="threatBadge" class="threat-badge-pill">—</div>
+              </div>
+            </div>
+            <div class="score-detail">
+              <div class="score-verdict-label">Assessment</div>
+              <p id="survivalVerdict" class="score-verdict-text"></p>
+              <div class="score-source">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                Scoring methodology: Careery AI Disruption Index 2026 + Oxford Automation Probability Study
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Risk Spectrum -->
+        <section class="result-section reveal-section" id="section-risk">
+          <div class="section-label">Section 02</div>
+          <h2 class="section-title">Disruption Risk Spectrum</h2>
+          <div class="risk-bar-container">
+            <div class="risk-bar-track">
+              <div class="risk-zone risk-zone-high">High<br>Disruption</div>
+              <div class="risk-zone risk-zone-moderate">Moderate</div>
+              <div class="risk-zone risk-zone-low">Low</div>
+              <div class="risk-zone risk-zone-resilient">Highly<br>Resilient</div>
+              <div class="risk-marker" id="riskMarker">
+                <div class="risk-marker-pin"></div>
+                <div class="risk-marker-label" id="riskMarkerLabel">Your Role</div>
+              </div>
+            </div>
+            <div class="risk-bar-ends">
+              <span>Higher disruption risk →</span>
+              <span>← Greater resilience</span>
+            </div>
+          </div>
+          <p class="risk-explanation" id="riskExplanation"></p>
+        </section>
+
+        <!-- Section 3: Disruption Timeline -->
+        <section class="result-section reveal-section" id="section-timeline">
+          <div class="section-label">Section 03</div>
+          <h2 class="section-title">Disruption Timeline</h2>
+          <div class="timeline-wrapper">
+            <div class="timeline-track">
+              <div class="tl-segment">
+                <div class="tl-dot" data-index="0"></div>
+                <div class="tl-phase-label">Wave 1</div>
+                <div class="tl-phase-years">2023 – 2025</div>
+                <div class="tl-phase-desc">Administrative &amp; clerical roles. Data entry, secretarial, basic document processing. Mass automation already underway.</div>
+              </div>
+              <div class="tl-connector"></div>
+              <div class="tl-segment">
+                <div class="tl-dot" data-index="1"></div>
+                <div class="tl-phase-label">Wave 2</div>
+                <div class="tl-phase-years">2025 – 2027</div>
+                <div class="tl-phase-desc">Knowledge work disruption. Writing, analysis, customer service, mid-tier professional roles. Peak displacement period.</div>
+              </div>
+              <div class="tl-connector"></div>
+              <div class="tl-segment">
+                <div class="tl-dot" data-index="2"></div>
+                <div class="tl-phase-label">Wave 3</div>
+                <div class="tl-phase-years">2027 – 2030</div>
+                <div class="tl-phase-desc">Complex professional roles. Medical, legal, engineering. Augmentation more likely than replacement; adaptation required.</div>
+              </div>
+              <div class="tl-connector"></div>
+              <div class="tl-segment">
+                <div class="tl-dot" data-index="3"></div>
+                <div class="tl-phase-label">Post-2030</div>
+                <div class="tl-phase-years">2030+</div>
+                <div class="tl-phase-desc">Physical &amp; relational work. Trades, hands-on healthcare, creative leadership. Human judgment remains central.</div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-impact-label" id="impactLabel"></div>
+          <p class="section-source">Source: <a href="https://careery.ai/blog/ai-automation-timeline" target="_blank" rel="noopener noreferrer">Careery AI Disruption Timeline 2026</a> · <a href="https://www.mckinsey.com/featured-insights/future-of-work/jobs-lost-jobs-gained-what-the-future-of-work-will-mean-for-jobs-skills-and-wages" target="_blank" rel="noopener noreferrer">McKinsey Global Institute</a></p>
+        </section>
+
+        <!-- Section 4: Salary Impact Projection -->
+        <section class="result-section reveal-section" id="section-salary">
+          <div class="section-label">Section 04</div>
+          <h2 class="section-title">Salary Impact Projection (2024–2028)</h2>
+          <div class="salary-summary-row">
+            <div class="salary-summary-item salary-best">
+              <div class="salary-scenario-tag">Best Case</div>
+              <div class="salary-pct" id="bestSalaryPct">—</div>
+              <div class="salary-scenario-desc">AI-augmented productivity gain</div>
+            </div>
+            <div class="salary-summary-item salary-worst">
+              <div class="salary-scenario-tag">Worst Case</div>
+              <div class="salary-pct" id="worstSalaryPct">—</div>
+              <div class="salary-scenario-desc">Significant disruption scenario</div>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="salaryChart"></canvas>
+          </div>
+          <p class="section-source">Projections based on: <a href="https://www.goldmansachs.com/insights/articles/generative-ai-may-raise-global-gdp-by-7-percent" target="_blank" rel="noopener noreferrer">Goldman Sachs AI Labour Research</a> · <a href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-jobs-barometer.html" target="_blank" rel="noopener noreferrer">PwC AI Jobs Barometer</a> · <a href="https://www.mckinsey.com/featured-insights/future-of-work" target="_blank" rel="noopener noreferrer">McKinsey Wage Analysis</a></p>
+        </section>
+
+        <!-- Section 5: Possible Outcomes -->
+        <section class="result-section reveal-section" id="section-outcomes">
+          <div class="section-label">Section 05</div>
+          <h2 class="section-title">Possible Outcomes</h2>
+          <p class="section-intro">Based on your profile, these are the probability-weighted scenarios for your career trajectory over the next 3–5 years.</p>
+          <div class="futures-grid" id="futuresGrid">
+            <!-- Built by JS -->
+          </div>
+        </section>
+
+        <!-- Section 6: Recommended Skills -->
+        <section class="result-section reveal-section" id="section-skills">
+          <div class="section-label">Section 06</div>
+          <h2 class="section-title">Recommended Skills</h2>
+          <p class="section-intro">Skills identified as high-value for your industry during the AI transition. Prioritized by urgency and impact.</p>
+          <div class="skills-grid" id="skillsGrid">
+            <!-- Built by JS -->
+          </div>
+          <p class="section-source">Source: <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">WEF Future of Jobs Report 2025</a> · <a href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-jobs-barometer.html" target="_blank" rel="noopener noreferrer">PwC AI Jobs Barometer</a></p>
+        </section>
+
+        <!-- Section 7: Expert Perspectives -->
+        <section class="result-section reveal-section" id="section-quotes">
+          <div class="section-label">Section 07</div>
+          <h2 class="section-title">Expert Perspectives</h2>
+          <div class="quotes-grid" id="quotesGrid">
+            <!-- Built by JS -->
+          </div>
+        </section>
+
+        <!-- Section 8: Key Statistics -->
+        <section class="result-section reveal-section" id="section-stats">
+          <div class="section-label">Section 08</div>
+          <h2 class="section-title">Key Statistics</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-card-number">300M</div>
+              <div class="stat-card-desc">jobs globally exposed to AI-driven automation or significant transformation</div>
+              <div class="stat-card-source"><a href="https://www.goldmansachs.com/insights/articles/generative-ai-may-raise-global-gdp-by-7-percent" target="_blank" rel="noopener noreferrer">Goldman Sachs, 2023</a></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-number">80%</div>
+              <div class="stat-card-desc">of US workers will have at least 10% of their work tasks affected by GPT-class models</div>
+              <div class="stat-card-source"><a href="https://www.vice.com/en/article/openai-research-says-80-of-us-workers-will-have-jobs-impacted-by-gpt/" target="_blank" rel="noopener noreferrer">OpenAI Research, 2023</a></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-number">56%</div>
+              <div class="stat-card-desc">wage premium observed for workers with demonstrated AI skills versus peers without</div>
+              <div class="stat-card-source"><a href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-jobs-barometer.html" target="_blank" rel="noopener noreferrer">PwC AI Jobs Barometer, 2023</a></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-number">40%</div>
+              <div class="stat-card-desc">of global employment exposed to AI disruption, with advanced economies facing the greatest impact</div>
+              <div class="stat-card-source"><a href="https://codingscape.com/blog/40-percent-of-global-employment-is-exposed-to-ai-imf-report" target="_blank" rel="noopener noreferrer">IMF Analysis, 2024</a></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-number">7%</div>
+              <div class="stat-card-desc">projected boost to global GDP from generative AI over the next decade</div>
+              <div class="stat-card-source"><a href="https://www.goldmansachs.com/insights/articles/generative-ai-may-raise-global-gdp-by-7-percent" target="_blank" rel="noopener noreferrer">Goldman Sachs, 2023</a></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-number">69M</div>
+              <div class="stat-card-desc">new roles expected to be created by 2027, partially offsetting displacement — net gain of 2M net new jobs</div>
+              <div class="stat-card-source"><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">WEF Future of Jobs, 2025</a></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Share Results -->
+        <section class="result-section reveal-section share-section" id="section-share">
+          <h2 class="share-title">Share Your Results</h2>
+          <p class="share-subtitle">Copy your results summary to share or save for reference.</p>
+          <div class="share-card">
+            <div class="share-card-content" id="shareContent"></div>
+          </div>
+          <div class="share-actions">
+            <button class="btn-secondary" onclick="copyShareText()">Copy to Clipboard</button>
+            <div class="copy-confirm" id="copyConfirm">Copied to clipboard</div>
+          </div>
+        </section>
+
+        <!-- Methodology Accordion -->
+        <section class="result-section methodology-section reveal-section" id="section-methodology">
+          <details class="methodology-accordion">
+            <summary class="methodology-toggle">
+              <span>Methodology &amp; Sources</span>
+              <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l5 5 5-5"/></svg>
+            </summary>
+            <div class="methodology-body">
+              <p>This assessment draws on publicly available institutional research to estimate the probability of AI-driven disruption for a given role. The scoring model incorporates:</p>
+              <ul>
+                <li><strong>Role category classification</strong> — job titles mapped to disruption risk tiers based on task automation probability studies</li>
+                <li><strong>Experience modifiers</strong> — tenure affects resilience (junior roles more exposed to automation; senior roles retain strategic value)</li>
+                <li><strong>AI tool adoption</strong> — current usage of AI tools is a leading indicator of adaptability</li>
+                <li><strong>Seniority adjustments</strong> — executive and senior roles are buffered by decision-making authority and organizational relationships</li>
+              </ul>
+              <h4>Primary Sources</h4>
+              <ul class="source-list">
+                <li><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">World Economic Forum — Future of Jobs Report 2025</a></li>
+                <li><a href="https://www.goldmansachs.com/insights/articles/generative-ai-may-raise-global-gdp-by-7-percent" target="_blank" rel="noopener noreferrer">Goldman Sachs — Generative AI & GDP Impact Study, 2023</a></li>
+                <li><a href="https://www.mckinsey.com/featured-insights/future-of-work" target="_blank" rel="noopener noreferrer">McKinsey Global Institute — Future of Work Research</a></li>
+                <li><a href="https://www.pwc.com/gx/en/issues/artificial-intelligence/ai-jobs-barometer.html" target="_blank" rel="noopener noreferrer">PwC — AI Jobs Barometer, 2023</a></li>
+                <li><a href="https://www.vice.com/en/article/openai-research-says-80-of-us-workers-will-have-jobs-impacted-by-gpt/" target="_blank" rel="noopener noreferrer">OpenAI — GPT Impact on US Labour Force, 2023</a></li>
+                <li><a href="https://codingscape.com/blog/40-percent-of-global-employment-is-exposed-to-ai-imf-report" target="_blank" rel="noopener noreferrer">IMF — Global Employment AI Exposure Analysis, 2024</a></li>
+                <li><a href="https://fortune.com/2024/05/25/ai-job-displacement-forecast-50-percent-2027-kai-fu-lee-chatgpt-openai/" target="_blank" rel="noopener noreferrer">Kai-Fu Lee — AI Job Displacement Forecast, Fortune 2024</a></li>
+                <li><a href="https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic" target="_blank" rel="noopener noreferrer">Dario Amodei — AI Impact on White-Collar Work, Anthropic 2025</a></li>
+                <li><a href="https://privatebank.jpmorgan.com/apac/en/insights/markets-and-investing/tmt/why-ai-might-strain-the-economy-before-it-booms" target="_blank" rel="noopener noreferrer">JPMorgan — AI Economic Strain Analysis, 2025</a></li>
+                <li><a href="https://finance.yahoo.com/news/goldman-sachs-warns-ai-fueled-layoffs-could-raise-the-unemployment-rate-this-year-chart-154251740.html" target="_blank" rel="noopener noreferrer">Goldman Sachs — AI-Fueled Layoffs Warning, 2025</a></li>
+              </ul>
+              <p class="disclaimer"><strong>Disclaimer:</strong> This tool provides estimates for informational purposes only. Individual career outcomes depend on many factors beyond those modeled here. This is not professional career, financial, or legal advice. Consult qualified professionals for decisions of significant consequence.</p>
+            </div>
+          </details>
+        </section>
+
+        <!-- Compare Link -->
+        <div class="compare-cta">
+          <a href="#" class="compare-link" onclick="showPage('leaderboard'); return false;">
+            Compare with other roles →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== LEADERBOARD PAGE ========== -->
+  <div id="leaderboard-page" class="page">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="site-brand"><a href="#" onclick="showPage('landing'); return false;">AI Job Impact Analyzer</a></div>
+        <nav class="site-nav">
+          <a href="#" id="backFromLeaderboard" onclick="showPage('landing'); return false;">← Back</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="leaderboard-wrapper">
+      <div class="container">
+        <div class="leaderboard-header">
+          <h2 class="leaderboard-title">How Other Roles Compare</h2>
+          <p class="leaderboard-subtitle">AI resilience scores across roles, sorted by research-based disruption risk. Your entry appears highlighted after completing your assessment.</p>
+        </div>
+
+        <div class="lb-filters">
+          <button class="lb-filter active" onclick="filterLeaderboard('all', this)">All Roles</button>
+          <button class="lb-filter" onclick="filterLeaderboard('doomed', this)">Highest Risk</button>
+          <button class="lb-filter" onclick="filterLeaderboard('safe', this)">Most Resilient</button>
+        </div>
+
+        <div class="lb-table-wrapper">
+          <table class="lb-table">
+            <thead>
+              <tr>
+                <th class="col-rank">Rank</th>
+                <th class="col-role">Role</th>
+                <th class="col-industry">Industry</th>
+                <th class="col-score">Resilience Score</th>
+                <th class="col-risk">Risk Level</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+              <!-- Built by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <p class="lb-note">Scores are based on Careery 2026 disruption data, Oxford automation probability studies, and aggregated WEF Future of Jobs research. Assessments represent role categories, not individual predictions.</p>
+
+        <div class="lb-footer-actions">
+          <button class="btn-primary" onclick="showPage('form')">Take Your Assessment</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer-simple">
+      <div class="container">
+        <p>AI Job Impact Analyzer — An evidence-based career assessment tool. Results are for informational purposes only.</p>
+      </div>
+    </footer>
+  </div>
 
   <script src="./app.js"></script>
 </body>
