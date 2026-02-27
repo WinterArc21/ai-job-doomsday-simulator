@@ -614,6 +614,87 @@ a:hover { color: var(--terracotta); }
   line-height: 1.5;
 }
 
+/* ---- FORM VALIDATION ---- */
+.field-group.field-error .field-input,
+.field-group.field-error .field-select {
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(196, 93, 62, 0.15);
+}
+
+.field-group.field-error .field-label {
+  color: var(--terracotta);
+}
+
+.segmented-control.control-error {
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(196, 93, 62, 0.15);
+}
+
+.validation-notification {
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  animation: slideIn 0.3s ease;
+}
+
+.validation-notification.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.validation-notification-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--terracotta-dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.validation-icon {
+  flex-shrink: 0;
+  color: var(--terracotta);
+}
+
+.validation-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--terracotta);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.validation-close:hover {
+  opacity: 1;
+}
+
 /* ---- LOADING PAGE ---- */
 #loading-page {
   background: var(--cream-light);
