@@ -2041,7 +2041,6 @@ a:hover {
     flex-direction: column;
   }
 
-  .btn-share-image,
   .btn-share-twitter,
   .btn-share-linkedin {
     width: 100%;
@@ -2107,29 +2106,6 @@ a:hover {
   align-items: center;
   gap: 10px;
   margin-top: 16px;
-}
-
-.btn-share-image {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: var(--charcoal);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 600;
-  padding: 11px 22px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-  text-decoration: none;
-}
-
-.btn-share-image:hover {
-  background: var(--navy);
-  transform: translateY(-1px);
-  color: #fff;
 }
 
 .btn-share-twitter {
