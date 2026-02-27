@@ -91,67 +91,67 @@ const RESEARCH = {
   },
   skillsByIndustry: {
     Technology: {
-      icon: ["\uD83D\uDD10", "\uD83E\uDD16", "\u2601\uFE0F", "\uD83C\uDFA8", "\u2699\uFE0F", "\uD83D\uDCCA", "\uD83D\uDEE1\uFE0F"],
+      icon: ["🔐", "🤖", "☁️", "🎨", "⚙️", "📊", "🛡️"],
       skills: ["Cybersecurity", "AI/ML Operations", "Cloud Architecture", "Human-AI Interaction Design",
         "DevOps & Infrastructure", "AI Ethics & Governance", "Systems Design"]
     },
     Finance: {
-      icon: ["\uD83E\uDDE0", "\uD83D\uDCE1", "\uD83D\uDD0D", "\uD83E\uDD1D", "\uD83D\uDCC8", "\u2696\uFE0F", "\uD83D\uDD12"],
+      icon: ["🧠", "📡", "🔍", "🤝", "📈", "⚖️", "🔒"],
       skills: ["AI-Augmented Decision Making", "Strategic Communication", "Risk Analysis",
         "Client Relationship Management", "Data Storytelling", "Regulatory Compliance", "Fraud Detection"]
     },
     Healthcare: {
-      icon: ["\uD83D\uDC8A", "\uD83E\uDE7A", "\uD83E\uDD1D", "\uD83D\uDD2C", "\uD83D\uDCCB", "\uD83E\uDDEC", "\uD83D\uDCF1"],
+      icon: ["💊", "🩺", "🤝", "🔬", "📋", "🧬", "📱"],
       skills: ["Telemedicine Technology", "AI-Assisted Diagnostics", "Patient Communication",
         "Specialized Procedures", "Research Methodology", "Clinical Data Analysis", "Digital Health"]
     },
     Education: {
-      icon: ["\uD83E\uDDE0", "\uD83C\uDFAF", "\uD83E\uDD1D", "\uD83D\uDCCA", "\uD83D\uDCA1", "\uD83C\uDF0D", "\uD83C\uDFAE"],
+      icon: ["🧠", "🎯", "🤝", "📊", "💡", "🌍", "🎮"],
       skills: ["AI Literacy & Pedagogy", "Personalized Learning Design", "Emotional Intelligence",
         "Data-Driven Instruction", "Creative Problem Solving", "Interdisciplinary Teaching", "EdTech Mastery"]
     },
     Legal: {
-      icon: ["\uD83E\uDDE0", "\uD83D\uDD0D", "\u2696\uFE0F", "\uD83E\uDD1D", "\uD83D\uDCDD", "\uD83D\uDEE1\uFE0F", "\uD83D\uDCBC"],
+      icon: ["🧠", "🔍", "⚖️", "🤝", "📝", "🛡️", "💼"],
       skills: ["AI Legal Research", "Regulatory Technology", "Contract Analysis",
         "Ethical Judgment", "Strategic Advocacy", "Compliance Tech", "Domain Expertise"]
     },
     Marketing: {
-      icon: ["\uD83C\uDFA8", "\uD83D\uDCE1", "\uD83C\uDFAF", "\uD83D\uDCCA", "\uD83E\uDD1D", "\uD83D\uDCA1", "\uD83C\uDF10"],
+      icon: ["🎨", "📡", "🎯", "📊", "🤝", "💡", "🌐"],
       skills: ["Brand Strategy & Voice", "AI Tool Mastery", "Creative Direction",
         "Cultural Insight", "Multimedia Production", "Data Storytelling", "Campaign Analytics"]
     },
     Manufacturing: {
-      icon: ["\uD83E\uDD16", "\uD83D\uDD27", "\uD83D\uDCCA", "\uD83D\uDEE1\uFE0F", "\u26A1", "\uD83C\uDF31", "\uD83C\uDFED"],
+      icon: ["🤖", "🔧", "📊", "🛡️", "⚡", "🌱", "🏭"],
       skills: ["Industrial AI Systems", "Advanced Diagnostics", "Smart Manufacturing",
         "Quality Control AI", "Process Optimization", "Renewable Energy Tech", "Robotics Oversight"]
     },
     Retail: {
-      icon: ["\uD83D\uDCCA", "\uD83E\uDD1D", "\uD83C\uDF10", "\uD83D\uDCF1", "\uD83C\uDFAF", "\uD83D\uDCA1", "\uD83D\uDD0D"],
+      icon: ["📊", "🤝", "🌐", "📱", "🎯", "💡", "🔍"],
       skills: ["Customer Experience Design", "AI-Driven Personalization", "Omnichannel Strategy",
         "Supply Chain Optimization", "Brand Storytelling", "Data Analytics", "E-commerce Technology"]
     },
     Government: {
-      icon: ["\uD83D\uDEE1\uFE0F", "\uD83D\uDCCA", "\uD83E\uDD1D", "\u2696\uFE0F", "\uD83D\uDCA1", "\uD83C\uDF10", "\uD83D\uDD12"],
+      icon: ["🛡️", "📊", "🤝", "⚖️", "💡", "🌐", "🔒"],
       skills: ["AI Policy & Governance", "Digital Services Design", "Stakeholder Communication",
         "Ethical AI Implementation", "Cybersecurity", "Data Analytics", "Change Management"]
     },
     Creative: {
-      icon: ["\uD83C\uDFA8", "\uD83D\uDCA1", "\uD83D\uDCE1", "\uD83C\uDF0D", "\uD83C\uDFAC", "\uD83E\uDD1D", "\uD83C\uDFAF"],
+      icon: ["🎨", "💡", "📡", "🌍", "🎬", "🤝", "🎯"],
       skills: ["Creative Direction & Vision", "AI Tool Mastery", "Cultural Insight",
         "Multimedia Production", "Experiential Design", "Brand Strategy", "Audience Development"]
     },
     Construction: {
-      icon: ["\uD83C\uDFD7\uFE0F", "\uD83E\uDD16", "\u26A1", "\uD83D\uDCCA", "\uD83D\uDD27", "\uD83C\uDF31", "\uD83D\uDCBC"],
+      icon: ["🏗️", "🤖", "⚡", "📊", "🔧", "🌱", "💼"],
       skills: ["Smart Building Systems", "Renewable Energy Tech", "Advanced Diagnostics Tools",
         "Project Management", "BIM & Digital Twins", "Entrepreneurship", "Safety Tech"]
     },
     Transportation: {
-      icon: ["\uD83D\uDE80", "\uD83D\uDCE1", "\uD83D\uDD27", "\uD83D\uDCCA", "\uD83D\uDEE1\uFE0F", "\uD83C\uDF31", "\uD83D\uDCA1"],
+      icon: ["🚀", "📡", "🔧", "📊", "🛡️", "🌱", "💡"],
       skills: ["Autonomous Systems Oversight", "Logistics Optimization", "Predictive Maintenance",
         "Fleet Management Tech", "Safety & Compliance", "Sustainability Tech", "Last-Mile Innovation"]
     },
     Other: {
-      icon: ["\uD83E\uDDE0", "\uD83E\uDD1D", "\uD83D\uDCCA", "\uD83D\uDCA1", "\uD83D\uDD0D", "\uD83C\uDFAF", "\u26A1"],
+      icon: ["🧠", "🤝", "📊", "💡", "🔍", "🎯", "⚡"],
       skills: ["AI Literacy & Prompt Engineering", "Critical Thinking & Analysis", "Emotional Intelligence",
         "Creative Problem Solving", "Adaptability & Resilience", "Data Storytelling", "Interdisciplinary Knowledge"]
     }
@@ -210,17 +210,17 @@ const RESEARCH = {
   scenarios: {
     best: {
       name: "AI-Augmented Growth",
-      desc: "AI becomes a productivity multiplier for your role. Early adoption of AI tools triples output, and your capacity to direct AI effectively becomes a premium skill. Organizations compete for workers who can lead AI integration. Salary growth of 20\u201335% over 3 years.",
+      desc: "AI becomes a productivity multiplier for your role. Early adoption of AI tools triples output, and your capacity to direct AI effectively becomes a premium skill. Organizations compete for workers who can lead AI integration. Salary growth of 20–35% over 3 years.",
       prob_base: [25, 35]
     },
     likely: {
       name: "Role Transformation",
-      desc: "Your current role evolves significantly. 40\u201360% of existing tasks become automated, but new responsibilities emerge around oversight, strategy, and human judgment. A 6\u201312 month adaptation period is expected. Compensation stays flat or dips modestly before recovering.",
+      desc: "Your current role evolves significantly. 40–60% of existing tasks become automated, but new responsibilities emerge around oversight, strategy, and human judgment. A 6–12 month adaptation period is expected. Compensation stays flat or dips modestly before recovering.",
       prob_base: [35, 45]
     },
     bad: {
       name: "Significant Disruption",
-      desc: "Your role faces meaningful headcount reduction. Organizations cut positions 20\u201340% in your department, and remaining workers take on broader responsibilities with AI assistance. A career pivot within 18 months becomes the most pragmatic path.",
+      desc: "Your role faces meaningful headcount reduction. Organizations cut positions 20–40% in your department, and remaining workers take on broader responsibilities with AI assistance. A career pivot within 18 months becomes the most pragmatic path.",
       prob_base: [15, 25]
     },
     worst: {
@@ -297,17 +297,15 @@ let userLeaderboardEntry = null;
 // =============================================
 // ASSESSMENT COUNTER (Feature 3)
 // =============================================
-const COUNTER_KEY = 'ai_analyzer_total_count';
 const COUNTER_SEED = 14287; // Starting seed so it looks populated
+let _assessmentSessionCount = 0; // In-memory session counter
 
 function getAssessmentCount() {
-  const stored = parseInt(localStorage.getItem(COUNTER_KEY) || '0', 10);
-  return COUNTER_SEED + stored;
+  return COUNTER_SEED + _assessmentSessionCount;
 }
 
 function incrementAssessmentCount() {
-  const current = parseInt(localStorage.getItem(COUNTER_KEY) || '0', 10);
-  localStorage.setItem(COUNTER_KEY, current + 1);
+  _assessmentSessionCount++;
   updateCounterDisplay();
 }
 
@@ -506,7 +504,7 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
   const [minScore, maxScore] = catData.survival_range;
   const [minSalary, maxSalary] = catData.salary_change_range;
 
-  // Base score \u2014 midpoint of range
+  // Base score — midpoint of range
   const baseScore = (minScore + maxScore) / 2;
 
   // Experience modifier
@@ -526,7 +524,7 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
   const senMods = { entry: -8, mid: 0, senior: 5, executive: 8 };
   const senMod = senMods[seniority] || 0;
 
-  // Slight variance \u00B13
+  // Slight variance ±3
   const variance = (Math.random() * 6) - 3;
 
   const rawScore = baseScore + expMod + aiMod + senMod + variance;
@@ -547,20 +545,20 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
 
   // Disruption wave
   let waveImpact;
-  if (cat === 'ultra_high_risk') waveImpact = 'Wave 1 (2023\u20132025) \u2014 Disruption already in progress';
-  else if (cat === 'high_risk') waveImpact = 'Wave 2 (2025\u20132027) \u2014 Peak disruption period';
-  else if (cat === 'moderate_risk') waveImpact = 'Wave 2\u20133 (2026\u20132028) \u2014 Transition and adaptation period';
-  else if (cat === 'low_risk') waveImpact = 'Wave 3 (2027\u20132030) \u2014 Long-term evolution';
-  else waveImpact = 'Post-2030 \u2014 Strong resilience through the AI era';
+  if (cat === 'ultra_high_risk') waveImpact = 'Wave 1 (2023–2025) — Disruption already in progress';
+  else if (cat === 'high_risk') waveImpact = 'Wave 2 (2025–2027) — Peak disruption period';
+  else if (cat === 'moderate_risk') waveImpact = 'Wave 2–3 (2026–2028) — Transition and adaptation period';
+  else if (cat === 'low_risk') waveImpact = 'Wave 3 (2027–2030) — Long-term evolution';
+  else waveImpact = 'Post-2030 — Strong resilience through the AI era';
 
   // Verdict (professional tone)
   let verdict;
   if (score < 25) {
     verdict = `This role faces high disruption risk. AI is already automating a significant portion of its core functions, and the pace is accelerating through 2027. Proactive reskilling is the most effective response at this stage.`;
   } else if (score < 40) {
-    verdict = `This role carries significant exposure to AI disruption. It falls within Wave ${cat === 'ultra_high_risk' ? '1' : '2'} of automation impact. Workers who adapt early \u2014 by building adjacent skills and AI fluency \u2014 will be best positioned.`;
+    verdict = `This role carries significant exposure to AI disruption. It falls within Wave ${cat === 'ultra_high_risk' ? '1' : '2'} of automation impact. Workers who adapt early — by building adjacent skills and AI fluency — will be best positioned.`;
   } else if (score < 55) {
-    verdict = `This role faces meaningful transformation over the next 2\u20133 years. AI will automate a substantial portion of current tasks, but human oversight, judgment, and client relationships will remain essential.`;
+    verdict = `This role faces meaningful transformation over the next 2–3 years. AI will automate a substantial portion of current tasks, but human oversight, judgment, and client relationships will remain essential.`;
   } else if (score < 70) {
     verdict = `This role shows moderate resilience. AI augmentation is more likely than direct replacement. Workers who actively adopt AI tools will gain a measurable productivity and compensation advantage over peers who do not.`;
   } else if (score < 85) {
@@ -574,7 +572,7 @@ function calculateSurvival(jobTitle, experience, industry, seniority, aiUsage) {
   if (score < 35) {
     riskExplanation = `Your role is positioned in the high-disruption zone. Research from the WEF and Goldman Sachs identifies roles in this range as facing the most immediate pressure from AI automation, particularly in task-level functions. Early action on skill development has a demonstrable impact on long-term outcomes.`;
   } else if (score < 55) {
-    riskExplanation = `Your role sits in the elevated-risk zone \u2014 significant transformation is expected, but outright displacement is not inevitable. Workers who augment their expertise with AI proficiency are demonstrably more likely to navigate this transition successfully.`;
+    riskExplanation = `Your role sits in the elevated-risk zone — significant transformation is expected, but outright displacement is not inevitable. Workers who augment their expertise with AI proficiency are demonstrably more likely to navigate this transition successfully.`;
   } else if (score < 75) {
     riskExplanation = `Your role shows moderate resilience. AI will reshape responsibilities, but the combination of human judgment, domain expertise, and relationship-based work provides a meaningful buffer. Adaptation will be required; replacement is not the primary risk.`;
   } else {
@@ -697,7 +695,7 @@ function runAnalysis() {
 function buildResults(r) {
   // Header
   document.getElementById('resultsSubject').textContent =
-    `AI Impact Assessment: ${r.jobTitle} \u2014 ${r.industry || 'General'}`;
+    `AI Impact Assessment: ${r.jobTitle} — ${r.industry || 'General'}`;
   document.getElementById('resultsTimestamp').textContent =
     new Date().toLocaleDateString('en-US', {
       month: 'long', day: 'numeric', year: 'numeric'
@@ -805,18 +803,18 @@ function buildSkills(r) {
 
   const skillDescriptions = {
     "AI Literacy & Prompt Engineering": "Master prompting, AI workflows, and tool chains. 56% wage premium for AI-skilled workers (PwC).",
-    "Critical Thinking & Analysis": "AI can generate \u2014 humans must evaluate. Complex judgment remains a human advantage.",
-    "Emotional Intelligence": "Empathy, social skills, and relationship-building \u2014 skills AI cannot replicate.",
+    "Critical Thinking & Analysis": "AI can generate — humans must evaluate. Complex judgment remains a human advantage.",
+    "Emotional Intelligence": "Empathy, social skills, and relationship-building — skills AI cannot replicate.",
     "Creative Problem Solving": "Novel thinking and creative synthesis across domains remain uniquely human.",
     "Adaptability & Resilience": "The number one skill for navigating rapid change in the AI era.",
     "Data Storytelling": "Transform AI-generated data into compelling narratives and actionable insights.",
     "Cybersecurity": "As AI expands attack surfaces, security expertise becomes mission-critical.",
     "AI/ML Operations": "Manage, deploy, and maintain AI systems in production environments.",
-    "Cloud Architecture": "AI runs in the cloud \u2014 cloud expertise is foundational for the AI economy.",
+    "Cloud Architecture": "AI runs in the cloud — cloud expertise is foundational for the AI economy.",
     "Human-AI Interaction Design": "Design systems where humans and AI collaborate effectively.",
     "AI Ethics & Governance": "Organizations need humans to set guardrails and ensure responsible AI use.",
     "Systems Design": "High-level architecture and systems thinking remain beyond AI's current scope.",
-    "DevOps & Infrastructure": "The backbone of AI deployment \u2014 high demand, difficult to automate.",
+    "DevOps & Infrastructure": "The backbone of AI deployment — high demand, difficult to automate.",
     "AI-Augmented Decision Making": "Use AI as a co-pilot for strategic decisions while retaining final authority.",
     "Strategic Communication": "Translate complex AI insights into human language for stakeholders.",
     "Change Management": "Lead organizations through AI-driven transformation effectively.",
@@ -828,19 +826,19 @@ function buildSkills(r) {
     "Cultural Insight": "Deep cultural understanding informs content that resonates authentically.",
     "Multimedia Production": "Direct, orchestrate, and curate across AI-generated media channels.",
     "Experiential Design": "Create physical and digital experiences that AI cannot fully replicate.",
-    "Telemedicine Technology": "Digital health platforms expanding access to care \u2014 high demand.",
+    "Telemedicine Technology": "Digital health platforms expanding access to care — high demand.",
     "AI-Assisted Diagnostics": "Partner with AI diagnostic tools while applying clinical judgment.",
     "Patient Communication": "Empathy, trust, and communication in healthcare remain deeply human.",
-    "Specialized Procedures": "Hands-on clinical skills cannot be automated \u2014 high value.",
+    "Specialized Procedures": "Hands-on clinical skills cannot be automated — high value.",
     "Research Methodology": "Design and validate studies that AI cannot conduct independently.",
-    "Smart Building Systems": "IoT, sensors, and automation in modern construction \u2014 growing field.",
+    "Smart Building Systems": "IoT, sensors, and automation in modern construction — growing field.",
     "Renewable Energy Tech": "Green transition creates significant demand for skilled workers.",
     "Advanced Diagnostics Tools": "AI diagnostic systems require human interpretation and application.",
     "Project Management": "Complex project coordination requires human leadership and judgment.",
-    "Entrepreneurship": "Build your own AI-powered venture \u2014 the ultimate resilience strategy.",
+    "Entrepreneurship": "Build your own AI-powered venture — the ultimate resilience strategy.",
     "Interdisciplinary Knowledge": "Broad knowledge enables you to connect insights AI cannot see.",
-    "Logistics Optimization": "AI-augmented supply chain management \u2014 humans direct the strategy.",
-    "Regulatory Compliance": "Regulations require human accountability \u2014 cannot be delegated to AI.",
+    "Logistics Optimization": "AI-augmented supply chain management — humans direct the strategy.",
+    "Regulatory Compliance": "Regulations require human accountability — cannot be delegated to AI.",
     "Risk Analysis": "Holistic risk assessment combining data and judgment remains human.",
     "Autonomous Systems Oversight": "Monitor and manage AI-driven transportation systems.",
     "Interdisciplinary Teaching": "Teaching across domains, adapting to diverse learner needs.",
@@ -887,7 +885,7 @@ function buildSkills(r) {
 
   grid.innerHTML = skills.slice(0, 7).map((skill, i) => {
     const priority = priorities[i] || 'RECOMMENDED';
-    const icon = icons[i] || '\uD83D\uDCA1';
+    const icon = icons[i] || '💡';
     const desc = skillDescriptions[skill] || `High-value skill for navigating the AI transition in ${industry}. Projected demand through 2030.`;
     return `
       <div class="skill-card">
@@ -909,7 +907,7 @@ function buildQuotes() {
       <div class="quote-text">${q.quote}</div>
       <div class="quote-attr">
         <span class="person">${q.person}</span>
-        <span class="title-text"> \u2014 ${q.title}</span>
+        <span class="title-text"> — ${q.title}</span>
         <br>
         <span class="source-text">Source: <a href="${q.url}" target="_blank" rel="noopener noreferrer">${q.source}</a></span>
       </div>
@@ -930,12 +928,12 @@ function buildShareCard(r) {
   const topSkills = (RESEARCH.skillsByIndustry[industry] || RESEARCH.skillsByIndustry.Other).skills.slice(0, 3).join(', ');
 
   const shareText =
-    `AI Resilience Score: ${r.score}% \u2014 ${r.jobTitle} (${industry})
+    `AI Resilience Score: ${r.score}% — ${r.jobTitle} (${industry})
 Risk Assessment: ${r.threatLevel}
 Most Likely Outcome: ${likelyScenario} (${maxProb}%)
 Recommended Skills: ${topSkills}
 
-Assessed using the AI Job Impact Analyzer \u2014 evidence-based career analysis from WEF, Goldman Sachs, McKinsey & OpenAI research.
+Assessed using the AI Job Impact Analyzer — evidence-based career analysis from WEF, Goldman Sachs, McKinsey & OpenAI research.
 laidoff.vercel.app`;
 
   document.getElementById('shareContent').textContent = shareText;
@@ -944,7 +942,7 @@ laidoff.vercel.app`;
 
   // Build social share tweet/linkedin text (Feature 4)
   const SITE_URL = 'https://laidoff.vercel.app';
-  const tweetText = encodeURIComponent(`My ${r.jobTitle} job has a ${r.score}% AI resilience score \u2014 ${r.threatLevel}. Check yours \ud83d\udc47`);
+  const tweetText = encodeURIComponent(`My ${r.jobTitle} job has a ${r.score}% AI resilience score — ${r.threatLevel}. Check yours 👇`);
   const shareUrl = encodeURIComponent(SITE_URL);
   const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}&url=${shareUrl}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
@@ -956,7 +954,7 @@ laidoff.vercel.app`;
 }
 
 // =============================================
-// SALARY CHART (Canvas \u2014 editorial color scheme)
+// SALARY CHART (Canvas — editorial color scheme)
 // =============================================
 function drawSalaryChart(best, worst) {
   const canvas = document.getElementById('salaryChart');
@@ -1038,14 +1036,14 @@ function drawSalaryChart(best, worst) {
   }
   ctx.stroke();
 
-  // Data points \u2014 best
+  // Data points — best
   for (let i = 0; i < years.length; i++) {
     ctx.beginPath();
     ctx.fillStyle = '#5A7A5E';
     ctx.arc(xPos(i), yPos(bestData[i]), 4, 0, Math.PI * 2);
     ctx.fill();
   }
-  // Data points \u2014 worst
+  // Data points — worst
   for (let i = 0; i < years.length; i++) {
     ctx.beginPath();
     ctx.fillStyle = '#C45D3E';
@@ -1222,17 +1220,16 @@ const SEED_ENTRIES = [
 ];
 
 // Trending role view counts (Feature 8)
-const TRENDING_VIEWS_KEY = 'ai_analyzer_role_views';
+let _roleViewsSession = {}; // In-memory role views
 
 function getRoleViews() {
-  try { return JSON.parse(localStorage.getItem(TRENDING_VIEWS_KEY) || '{}'); } catch { return {}; }
+  return _roleViewsSession;
 }
 
 function recordRoleView(jobTitle) {
   const views = getRoleViews();
   const key = jobTitle.toLowerCase().trim();
   views[key] = (views[key] || 0) + 1;
-  localStorage.setItem(TRENDING_VIEWS_KEY, JSON.stringify(views));
 }
 
 function getTrendingRoles() {
