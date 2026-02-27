@@ -585,13 +585,47 @@ function runAnalysis() {
   const jobTitle = document.getElementById('jobTitle').value.trim();
   const experience = document.getElementById('experience').value;
   const industry = document.getElementById('industry').value;
-  const seniority = document.querySelector('input[name="seniority"]:checked')?.value || 'mid';
-  const aiUsage = document.querySelector('input[name="aiUsage"]:checked')?.value || 'occasionally';
-
+  const seniorityChecked = document.querySelector('input[name="seniority"]:checked');
+  const aiUsageChecked = document.querySelector('input[name="aiUsage"]:checked');
+  
+  // Clear previous validation errors
+  clearValidationErrors();
+  
+  // Validate all required fields
+  const errors = [];
+  
   if (!jobTitle) {
-    alert('Please enter your job title to continue.');
+    errors.push({ field: 'jobTitle', message: 'Please enter your job title' });
+    showFieldError('jobTitle');
+  }
+  
+  if (!industry) {
+    errors.push({ field: 'industry', message: 'Please select your industry' });
+    showFieldError('industry');
+  }
+  
+  if (!seniorityChecked) {
+    errors.push({ field: 'seniorityControl', message: 'Please select your seniority level' });
+    showFieldError('seniorityControl');
+  }
+  
+  if (!aiUsageChecked) {
+    errors.push({ field: 'aiUsageControl', message: 'Please select your AI tool usage' });
+    showFieldError('aiUsageControl');
+  }
+  
+  // If there are errors, show notification and scroll to first error
+  if (errors.length > 0) {
+    showValidationNotification(errors);
+    const firstErrorField = document.getElementById(errors[0].field);
+    if (firstErrorField) {
+      firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     return;
   }
+  
+  const seniority = seniorityChecked.value;
+  const aiUsage = aiUsageChecked.value;
 
   // Calculate result
   analysisResult = calculateSurvival(jobTitle, experience, industry, seniority, aiUsage);
@@ -1185,6 +1219,85 @@ document.addEventListener('DOMContentLoaded', () => {
   const slider = document.getElementById('experience');
   if (slider) updateSlider(slider);
 });
+
+// =============================================
+// FORM VALIDATION
+// =============================================
+function showFieldError(fieldId) {
+  const field = document.getElementById(fieldId);
+  if (!field) return;
+  
+  // For input/select elements, add error class to parent field-group
+  const fieldGroup = field.closest('.field-group');
+  if (fieldGroup) {
+    fieldGroup.classList.add('field-error');
+  }
+  
+  // For segmented controls, add error class directly
+  if (fieldId === 'seniorityControl' || fieldId === 'aiUsageControl') {
+    field.classList.add('control-error');
+  }
+}
+
+function clearValidationErrors() {
+  // Remove error classes from all field groups
+  document.querySelectorAll('.field-group.field-error').forEach(el => {
+    el.classList.remove('field-error');
+  });
+  
+  // Remove error classes from segmented controls
+  document.querySelectorAll('.segmented-control.control-error').forEach(el => {
+    el.classList.remove('control-error');
+  });
+  
+  // Remove any existing notification
+  const existingNotification = document.querySelector('.validation-notification');
+  if (existingNotification) {
+    existingNotification.remove();
+  }
+}
+
+function showValidationNotification(errors) {
+  // Remove any existing notification
+  const existing = document.querySelector('.validation-notification');
+  if (existing) existing.remove();
+  
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = 'validation-notification';
+  
+  const errorList = errors.map(e => e.message).join(', ');
+  notification.innerHTML = `
+    <div class="validation-notification-content">
+      <svg class="validation-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <span>${errors.length === 1 ? errorList : 'Please complete all required fields: ' + errorList}</span>
+      <button class="validation-close" onclick="this.parentElement.parentElement.remove()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  `;
+  
+  // Insert at top of form card
+  const formCard = document.querySelector('.form-card');
+  if (formCard) {
+    formCard.insertBefore(notification, formCard.firstChild);
+  }
+  
+  // Auto-dismiss after 6 seconds
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.classList.add('fade-out');
+      setTimeout(() => notification.remove(), 300);
+    }
+  }, 6000);
+}
 
 // Expose globals
 window.showPage = showPage;
